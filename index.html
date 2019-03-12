@@ -17,13 +17,12 @@
 <body class="shower list">
 
     <header class="caption">
-        <h1>Shower Presentation Engine</h1>
+        <h1>How Reactive Programming simplifies complicated Frontend applications</h1>
         <p>Yours Truly, Famous Inc.</p>
     </header>
 
     <section class="slide" id="cover">
-        <h2>Don't Block Your Mind</h2>
-        <h3>Writing Highly-Performant Node.js Services</h3>
+        <h2>How Reactive Programming simplifies complicated Frontend applications</h2>
         <p>With &hearts; by <a>Anna Shavurska, Viseven</a></p>
         <figure>
             <img class="cover w" src="pictures/traffic.jpg" alt="Hands on the orange typewriter in a park" >
@@ -54,8 +53,8 @@
                 color: white;
             }
             .slide.small-code pre code{
-                font-size: 21px;
-                line-height: 1.6;
+                font-size: 20px;
+                line-height: 1.9;
             }
             .slide::after{
                 content: none;
@@ -96,10 +95,254 @@
         <h2>eWizard Architecture</h2>
         <img src="./pictures/architecture.png" width="68%" style="top: 61%; box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);" class="place" alt="">
     </section>
-    <!-- <section class="slide">
-        <h2>eWizard.js Framework</h2>
-        <p>about framework</p>
-    </section> -->
+
+
+    <section class="slide">
+        <h2 class="shout shrink" style="font-size: 90px;">What reactive programming is...</h2>
+        <footer>
+            А тепер давайте згадаємо або заново розберемось, що таке 
+            Функціональне програмування. А для того, щоб це зробити, нам потрібно
+            відповісти на питання: Що означає бути Реактивним?
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change (Wikipedia)</h2>
+        <h2>Reactive programming is programming with asynchronous data streams.(André Staltz)</h2>
+        <footer>
+            Це декларативна програмна парадигма, що пов'язана із потоками даних та поширенням змін (Вікіпедія)
+            Реактивне програмування - це програмування з асинхронними потоками даних (Андре Сталдз?) 
+            Однозначного і простого визначення реактивного програмування немає, щоб одразу все зрозуміти.
+            Але ми розберемось далі на прикладі, що означає "поширення зміни" і "потік даних"
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Not Reactive Code</h2>
+        <pre>
+            <code>let a = 1;</code>
+            <code>let b = 2;</code>
+            <code>let sum = a + b;</code>
+            <code>console.log(sum); // 3</code>
+            <code>a = 2;</code>
+            <code>console.log(sum); // ? <mark class="next">3</mark></code>          
+        </pre>
+        <footer>Розглянемо простенький приклад.
+            Який результат буде виведений в консоль за другим разом? - 3,
+            так як змінна з сумою ми не оновили.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Reactive Code</h2>
+        <pre>
+            <code>let a = 1;</code>
+            <code>let b = 2;</code>
+            <code>let sum = a + b;</code>
+            <code>console.log(sum); // 3</code>
+            <code>a = 2;</code>
+            <code>console.log(sum); // ? <mark class="next">4</mark></code>          
+        </pre>
+        <footer>цей самий приклад, але якщо цей код є реактивним, то 
+            в результаті ми побачимо в консолі 4. Ось це - магія реативності.
+            Коли нам не потрібно нічого робити, а зміни значень поширились 
+            автоматино.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Excel Example</h2>
+        <p>gif</p>
+        <footer>Найбільш відомий всім приклад реактивної системи - це excel.
+            Зміни в одній комірці автоматично поширюються на всі комірки,
+            які від неї залежать.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Stream - is like array in time</h2>
+        <p>CATS image</p>
+        <footer>Тепер коли ми вже знаємо що таке поширення змін, давайте
+            подивимось, що таке потік - це як масив, елементи якого з'являються
+            з часом
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Stream Example</h2>
+        <pre>
+            <code>button.addEventListener(event => {</code>
+            <code>  console.log(event);</code>
+            <code>});</code>
+        </pre>
+        <footer>Насправді, для нас тут нічого нового. Тому що навіть звичайний
+            обробник події - це дійсно асинхронний Потік - Event Stream.
+            На який ми можемо підписатись і робити якісь сайд ефекти.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Streams: variables, user inputs, properties, events, etc.</h2>
+        <img src="./pictures/dog.jpeg" alt="">
+        <p></p>
+        <footer>Але ми ж можемо створити Потік не лише з обробника події, а з будь-чого:
+            із змінної, властивості, даних, введених користувачем...
+            Будь-що може бути Потоком...
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Pull vs Push</h2>
+        <p></p>
+        <footer>Реактивна система підтримує push підхід
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Iterator</h2>
+        <pre>
+            <code>let iterator = someString[Symbol.iterator]();</code>
+            <code>iterator.next(); // { value: "h", done: false }</code>
+            <code>iterator.next(); // { value: "i", done: false }</code>
+            <code>iterator.next(); // { value: undefined, done: true }</code>
+        </pre>
+        <footer>Давайте розглянемо, що ми маємо в JS для колекцій - це Ітератор
+                Ітератори корисні для колекцій, однак асинхронні дії додають 
+                час в наш код. А Ітератори не дуже добре з цим справляються. 
+                Ми ніяк не можемо дізнатись, коли в колекції вже є нове значення.
+                Що ж ми можемо зробити? Здається нам pull підхід потрібно 
+                змінити на push. А ми знаємо, що для push підходу в JS є колбеки.
+                 Якщо об’єднати Ітератор і колбек, в нас вийде Observable                 
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Observable is basically an Iterable turned inside out</h2>
+        <p>Think of the Observable class as a “push” equivalent to Iterable, which is a “pull”</p>
+        <pre>
+            <code>let observer = {</code>
+            <code>  next: (x) => console.log(x)</code>
+            <code>}</code>
+            <code>myObservable[Symbol.observer](observer);</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>In Rx.js</h2>
+        <pre>
+            <code>myObservable.subscribe(function next(x)) {</code>
+            <code>  console.log(x);</code>
+            <code>});</code>
+        </pre>
+        <footer>Тепер коли ми знаємо, що таке Observable, ми можемо 
+            познайомитись з rxjs
+        </footer>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink" style="font-size: 90px;">Rx - Reactive eXtensions</h2>
+        <footer>RxJS is one of the hottest libraries in web development today. 
+            Offering a powerful, functional approach for dealing with events 
+            and with integration points into a growing number of frameworks, 
+            libraries, and utilities, the case for learning Rx has never been 
+            more appealing. Couple this with the ability to utilize your 
+            knowledge across nearly any language, having a solid grasp on 
+            reactive programming and what it can offer seems like a no-brainer.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>An API for asynchronous programming
+            with observable streams</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Simple Example</h2>
+        <pre>
+            <code>button.addEventListener(event => {</code>
+            <code>  console.log(event);</code>
+            <code>});</code>
+        </pre>
+        <pre>
+            <code>fromEvent(button, 'click')</code>
+            <code>  .subscribe(event => console.log(event));</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Observable Stream</h2>
+        <pre>
+            <code>fromEvent(button, 'click') // Observable</code>
+            <code>  .subscribe(event => console.log(event)); // Observer</code>
+        </pre>
+        <footer>Тут пояснити, що таке observable i observer
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Rx is a combination of the best ideas from
+            the Observer pattern, the Iterator pattern, and functional programming</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Operators</h2>
+        <ul>
+            <li>Pure functions</li>
+            <li>Filter, select, transform, combine, and compose Observables</li>
+            <li>Efficient execution</li>
+        </ul>
+        <footer>Operators are the horse-power behind observables, 
+            providing an elegant, declarative solution to complex 
+            asynchronous tasks.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Operators</h2>
+        <ul>
+            <li>map</li>
+            <li>flatMap</li>
+            <li>concat</li>
+            <li>switchMap</li>
+            <li>throttle</li>
+        </ul>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide small-code">
+        <h2>Operators Example</h2>
+        <pre>
+            <code>import { concat, filter } from 'rxjs/operators';</code>
+            <code>import { of } from 'rxjs';</code>
+            <code>const sourceOne = of(1, 2, 3);</code>
+            <code>const sourceTwo = of(4, 5, 6);</code>
+            <code>const example = sourceOne.pipe(</code>
+            <code>  concat(sourceTwo),</code>
+            <code>  filter(num => num % 2 === 0)</code>
+            <code>);</code>
+            <code>example.subscribe(val => console.log(val));</code>
+            <code>// 2,4,6</code>
+        </pre>
+        <footer>//emit values from sourceOne, when complete, subscribe to sourceTwo
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+
     <section class="slide">
         <h2>Presentation Dev Builder</h2>
         <p class="next">Crashes when 11 users run build concurrently</p>
