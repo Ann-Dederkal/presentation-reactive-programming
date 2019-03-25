@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { map, flatMap, takeUntil, take, tap, withLatestFrom } from 'rxjs/operators';
+import { sampleTime, map, flatMap, takeUntil, take, tap, withLatestFrom, share } from 'rxjs/operators';
 
 init();
 
@@ -21,75 +21,83 @@ function init() {
     .pipe(flatMap(() => mouseup$.pipe(take(1))));
 
   const dragElement$ = dragstart$
-    .pipe(map(({ x, y }) => document.elementFromPoint(x, y)));
+    .pipe(
+      map(({ x, y }) => {
+        const dragEl = document.elementFromPoint(x, y);
+        dragEl.classList.add('active');
+        return { dragEl, x, y };
+      }),
+      share(),
+    );
+
+  const previewElement$ = dragElement$
+    .pipe(
+      map(({ dragEl, x, y }) => createPreviewElement(dragEl, x, y)),
+      tap((previewElement) => {
+        body.appendChild(previewElement);
+      }),
+      share(),
+    );
+
+  const movePreviewElement$ = dragmove$
+    .pipe(
+      withLatestFrom(previewElement$),
+      tap(([{ x, y }, previewEl]) => {
+        Object.assign(previewEl.style, {
+          left: `${x}px`,
+          top: `${y}px`,
+        });
+      }),
+    );
 
   const moveElement$ = dragmove$
     .pipe(
-      withLatestFrom(dragElement$, ({ x, y }, el) => ({ x, y, el })),
-      tap(({ x, y, el }) => {
+      withLatestFrom(dragElement$),
+      sampleTime(200),
+      tap(([{ x, y }, { dragEl }]) => {
         const elInsert = document.elementFromPoint(x, y);
         const wrapper = document.getElementById('wrapper');
         if (elInsert.parentNode === wrapper) {
-          wrapper.insertBefore(el, elInsert);
+          insertAfter(dragEl, elInsert);
         }
       }),
     );
 
-  dragstart$.subscribe(console.log, null, () => console.log('end'));
-  moveElement$.subscribe(console.log, null, () => console.log('end'));
-  // dragmove$.subscribe(console.log, null, () => console.log('end'));
-  dragend$.subscribe(e => console.log('end', e), null, () => console.log('end'));
+  const removePreview$ = dragend$
+    .pipe(
+      withLatestFrom(previewElement$, dragElement$),
+      tap(([_, previewEl, { dragEl }]) => {
+        previewEl.remove();
+        dragEl.classList.remove('active');
+      }),
+    );
 
-//   dragstart$.subscribe(console.log);
-//   mousemove$.subscribe(console.log);
-//   mouseup$.subscribe(console.log);
+  dragstart$.subscribe(() => {}, null, () => console.log('end'));
+  movePreviewElement$.subscribe(() => {}, null, () => console.log('end'));
+  moveElement$.subscribe(() => {}, null, () => console.log('end'));
+  removePreview$.subscribe(e => console.log('end', e), null, () => console.log('end'));
 }
 
-// function createPreviewElement(element: ELEMENT, scale: number): ELEMENT {
-//   const previewElement = element.cloneNode(true);
-//   const { height, width } = element.getBoundingClientRect();
-//   const { x, y } = getElementFrame(element);
-//   const contentPreviewer = document.getElementById('contentPreviewer');
-//   const { x: contentTop, y: contentLeft } = getElementFrame(contentPreviewer);
-//   const xPreviewPosition = x - contentTop;
-//   const yPreviewPosition = y - contentLeft;
+function insertAfter(dragEl, el) {
+  el.parentNode.insertBefore(dragEl, el.nextElementSibling);
+}
 
-//   previewElement.classList.remove('selected-component');
-//   const defaultPreviewStyles = {
-//     position: 'absolute',
-//     opacity: '0.8',
-//     pointerEvents: 'none',
-//     margin: '0',
-//     zIndex: 100,
-//     height: height / scale,
-//     width: width / scale,
-//     top: `${xPreviewPosition}px`,
-//     left: `${xPreviewPosition}px`,
-//   };
+function createPreviewElement(element, x, y) {
+  const previewElement = element.cloneNode(true);
 
-//   previewElement.id = 'previewElement';
+  const defaultPreviewStyles = {
+    position: 'absolute',
+    opacity: '0.8',
+    pointerEvents: 'none',
+    margin: '0',
+    zIndex: 100,
+    left: `${x}px`,
+    top: `${y}px`,
+  };
 
-//   Object.assign(previewElement.style, defaultPreviewStyles);
+  previewElement.id = 'previewElement';
 
-//   previewElement.removeAttribute('data-id');
-//   previewElement.removeAttribute('v-component');
+  Object.assign(previewElement.style, defaultPreviewStyles);
 
-//   return previewElement;
-// }
-
-
-// function setMoveStyle(element: ELEMENT): void {
-//   element.classList.add('moving-component');
-// }
-
-// function resetMoveStyle(element: ELEMENT): void {
-//   element.classList.remove('moving-component');
-// }
-
-// function appendPreviewElement(previewElement: ELEMENT): void {
-//   document.querySelector('#contentPreviewer').appendChild(previewElement);
-// }
-
-// function removePreviewElement(previewElement: ELEMENT): void {
-//   previewElement.remove();
-// }
+  return previewElement;
+}
