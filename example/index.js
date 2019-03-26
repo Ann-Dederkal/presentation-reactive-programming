@@ -22,17 +22,15 @@ function init() {
 
   const dragElement$ = dragstart$
     .pipe(
-      map(({ x, y }) => {
-        const dragEl = document.elementFromPoint(x, y);
-        dragEl.classList.add('active');
-        return { dragEl, x, y };
-      }),
+      map(({ x, y }) => document.elementFromPoint(x, y)),
+      tap((dragEl) => { dragEl.classList.add('active'); }),
       share(),
     );
 
-  const previewElement$ = dragElement$
+  const previewElement$ = dragstart$
     .pipe(
-      map(({ dragEl, x, y }) => createPreviewElement(dragEl, x, y)),
+      withLatestFrom(dragElement$),
+      map(([{ x, y }, dragEl]) => createPreviewElement(dragEl, x, y)),
       tap((previewElement) => {
         body.appendChild(previewElement);
       }),
@@ -42,40 +40,43 @@ function init() {
   const movePreviewElement$ = dragmove$
     .pipe(
       withLatestFrom(previewElement$),
-      tap(([{ x, y }, previewEl]) => {
-        Object.assign(previewEl.style, {
-          left: `${x}px`,
-          top: `${y}px`,
-        });
-      }),
+      tap(([{ x, y }, previewEl]) => movePreviewElement(previewEl, x, y)),
     );
 
-  const moveElement$ = dragmove$
+  const moveDragElement$ = dragmove$
     .pipe(
       withLatestFrom(dragElement$),
       sampleTime(200),
-      tap(([{ x, y }, { dragEl }]) => {
-        const elInsert = document.elementFromPoint(x, y);
-        const wrapper = document.getElementById('wrapper');
-        if (elInsert.parentNode === wrapper) {
-          insertAfter(dragEl, elInsert);
-        }
-      }),
+      tap(([{ x, y }, dragEl]) => moveDragElement(dragEl, x, y)),
     );
 
-  const removePreview$ = dragend$
+  const finishMovement$ = dragend$
     .pipe(
       withLatestFrom(previewElement$, dragElement$),
-      tap(([_, previewEl, { dragEl }]) => {
+      tap(([_, previewEl, dragEl]) => {
         previewEl.remove();
         dragEl.classList.remove('active');
       }),
     );
 
-  dragstart$.subscribe(() => {}, null, () => console.log('end'));
   movePreviewElement$.subscribe(() => {}, null, () => console.log('end'));
-  moveElement$.subscribe(() => {}, null, () => console.log('end'));
-  removePreview$.subscribe(e => console.log('end', e), null, () => console.log('end'));
+  moveDragElement$.subscribe(() => {}, null, () => console.log('end'));
+  finishMovement$.subscribe(() => {}, null, () => console.log('end'));
+}
+
+function movePreviewElement(previewEl, x, y) {
+  Object.assign(previewEl.style, {
+    left: `${x}px`,
+    top: `${y}px`,
+  });
+}
+
+function moveDragElement(dragEl, x, y) {
+  const elInsert = document.elementFromPoint(x, y);
+  const wrapper = document.getElementById('wrapper');
+  if (elInsert.parentNode === wrapper) {
+    insertAfter(dragEl, elInsert);
+  }
 }
 
 function insertAfter(dragEl, el) {
@@ -96,8 +97,6 @@ function createPreviewElement(element, x, y) {
   };
 
   previewElement.id = 'previewElement';
-
   Object.assign(previewElement.style, defaultPreviewStyles);
-
   return previewElement;
 }
