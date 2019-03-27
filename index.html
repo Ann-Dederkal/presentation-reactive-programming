@@ -52,6 +52,9 @@
             #cover p a {
                 color: white;
             }
+            .shower code{
+                font-size: 23px;
+            }
             .slide.small-code pre code{
                 font-size: 20px;
                 line-height: 1.9;
@@ -63,8 +66,9 @@
     </section>
 
     <section class="slide">
+        <h2>Who I am...</h2>
         <ul>
-            <li>7 years as JavaScript Developer</li>
+            <li>8 years as JavaScript Developer</li>
             <li>eWizard.js Team Lead</li>
             <li>Frontend Tech Lead</li>
             <li>IT Academy Lead</li>
@@ -75,9 +79,9 @@
             Email: a.shavurska@viseven.com</p>
         <img src="./pictures/me.jpg" style="position:absolute; right: 100px; top: 100px;" width="200" alt="">
     </section>
-    <section class="slide">
+    <!-- <section class="slide">
         <img src="./pictures/team.jpg" class="cover h" alt="">
-    </section>
+    </section> -->
     <section class="slide">
         <h2>eWizard</h2>
         <ul>
@@ -91,11 +95,20 @@
         <p>about platform</p>
         <img src="./pictures/ewizard.png" width="90%" style="box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);" class="place" alt="">
     </section>
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>eWizard Architecture</h2>
         <img src="./pictures/architecture.png" width="68%" style="top: 61%; box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);" class="place" alt="">
+    </section> -->
+    <section class="slide">
+        <h2>Who you are...</h2>
+        <ul>
+            <li>Are you doing Vue?</li>
+            <li class="next">Are you doing Vuex?</li>
+            <li class="next">Are you doing Rx.js?</li>
+            <li class="next">Are you doing Vue-rx?</li>
+            <li class="next">Are you happy with what you're doing?</li>
+        </ul>
     </section>
-
 
     <section class="slide">
         <h2 class="shout shrink" style="font-size: 90px;">What reactive programming is...</h2>
@@ -319,6 +332,493 @@
         </footer>
     </section>
     <section class="slide">
+        <h2 class="shout shrink" style="font-size: 90px;">
+            But WTH I need this Reactive stuff?
+        </h2>
+        <footer>
+            А тепер давайте розберемось як працює Node.js, щоб зрозуміти як можна
+            оптимізувати наш конвертор.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Let’s think about writing complex SPA (using Vue)</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Managing state stuff is hard.</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Vuex makes it simple (not necessarily easy)</h2>
+        <p>but there is a problem with Vuex: it doesn’t do anything to help you manage async code.</p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Frontend Development: mostly synchronous or asynchronous?</h2>
+        <p>We tend to think synchronously. We write code in blocks that are read top to bottom, left to right. If this, then this, else this… </p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>But the truth is:</h2>
+        <p>What are we doing with code?</p>
+        <ul>
+            <li>Handling user input, DOM events</li>
+            <li>Animations</li>
+            <li>AJAX/JSONP</li>
+            <li>Web Sockets/SSE</li>
+            <li>Updating DOM</li>  
+        </ul>
+        <div class="next" style="margin-top:-50px; width: 180px; border-top: 2px solid black;"></div>
+        <footer>
+            Що ми зазвичай робимо на фронтенді? А тепер давайте подивимось, що з цього є асинхронним?
+            А правда в тому, що Лише робота з DOM є синхронною
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Managing async stuff is harder</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>RxJS makes it manageable</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Objections?</h2>
+        <p></p>
+        <footer>Я впевнена, що в цей момент наша аудиторія всередині розділилась на два табори: одні кивають на знак підтримки, і згодні зі мною.
+            А інші - звісно проти, бо для чого вводити ще щось нам в проекти, якщо на фронтенді достатньо натівних засобів для того, щоб управляти асинхронністю.
+            Дехто, можливо недавно тільки розібрався з промісами і асінк евейтами. Що ж Rx може нам дати? Звісно, крім того, що можна повипендрюватись трохи ))
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>How Rx helps to manage async stuff?</h2>
+        <ul>
+            <li>Observables are cancelable</li>
+            <li>Rx operators make magic</li>
+        </ul>
+        <footer>Проресьорчити це Observables are cancelable
+            - Можливістю легко управляти асинхронними діями, які потребують якохсь додаткової логіки управління - при допомозі операторів.
+            - Можливістю відмінити дію. Що з промісами зробити не можливо. Наприклад, при переході між роутами аппа, чи завжди ми відміняємо запити, які були вже надіслані?  
+        </footer>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink" style="font-size: 90px;">
+            Showcases
+        </h2>
+        <footer>
+            А тепер давайте подивимось реальні приклади
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Drag-n-drop functionality example with optimization</h2>
+        <p>Video of example</p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Create Streams from Mouse Events</h2>
+        <pre>
+            <code>mousedown$ = fromEvent(body, 'mousedown')</code>
+            <code> .pipe(map(getCoordsFromEvent));</code>
+            <code>mousemove$ = fromEvent(body, 'mousemove')</code>
+            <code> .pipe(map(getCoordsFromEvent));</code>
+            <code>mouseup$ = fromEvent(body, 'mouseup')</code>
+            <code> .pipe(map(getCoordsFromEvent));</code>
+        </pre>
+        <footer>
+            Давайте розглянемо приклад, як при допомозі Rx легко реалізувати такий драг-дроп з оптимізацією пересування компонентів.
+            Частину функцій я не буду розглядати, думаю вони інтуїтивно мають бути зрозумілі, адже наша ціль, це зрозуміти головний концепт.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>And transform them to Drag Events</h2>
+        <pre>
+            <code>const dragstart$ = mousedown$</code>
+            <code>  .pipe(flatMap(() => mousemove$.pipe(takeUntil(mouseup$),take(1))));</code>
+            <code>const dragmove$ = mousedown$</code>
+            <code>  .pipe(flatMap(() => mousemove$.pipe(takeUntil(mouseup$))));</code>
+            <code>const dragend$ = dragstart$</code>
+            <code>  .pipe(flatMap(() => mouseup$.pipe(take(1))));</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Then take a dragged element</h2>
+        <pre>
+            <code>const dragElement$ = dragstart$</code>
+            <code>  .pipe(</code>
+            <code>    map(({ x, y }) => document.elementFromPoint(x, y)),</code>
+            <code>    tap(dragEl => dragEl.classList.add('active')),</code>
+            <code>    share(),</code>
+            <code>  );</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>And create a preview element</h2>
+        <pre>
+            <code>const previewElement$ = dragstart$</code>
+            <code>  .pipe(</code>
+            <code>    withLatestFrom(dragElement$),</code>
+            <code>    map(([{ x, y }, dragEl]) => createPreviewElement(dragEl, x, y)),</code>
+            <code>    tap(previewElement => body.appendChild(previewElement)),</code>
+            <code>    share(),</code>
+            <code>  );</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>withLatestFrom</h2>
+        <img src="./pictures/withLatestFrom.png" alt="">
+        <footer>Whenever the source Observable emits a value, it computes a 
+            formula using that value plus the latest values from other input 
+            Observables, then emits the output of that formula.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Now move a preview element</h2>
+        <pre>
+            <code>const movePreviewElement$ = dragmove$</code>
+            <code>  .pipe(</code>
+            <code>    withLatestFrom(previewElement$),</code>
+            <code>    tap(([{ x, y }, previewEl]) => {</code>
+            <code>      movePreviewElement(previewEl, x, y))</code>
+            <code>    }),</code>
+            <code>  );</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>And move dragged element itself</h2>
+        <pre>
+            <code>const moveDragElement$ = dragmove$</code>
+            <code>  .pipe(</code>
+            <code>    withLatestFrom(dragElement$),</code>
+            <code>    tap(([{ x, y }, dragEl]) => moveDragElement(dragEl, x, y)),</code>
+            <code>  );</code>
+        </pre>
+        <footer>Але ми хочемо добитись результату, щоб не на всі рухи мишкою
+            наш редактор реагував.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>sampleTime</h2>
+        <img src="./pictures/sampleTime.png" alt="">
+        <footer>Emits the most recently emitted value from the source 
+            Observable within periodic time intervals.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Optimize element movement</h2>
+        <pre>
+            <code>const moveDragElement$ = dragmove$</code>
+            <code>  .pipe(</code>
+            <code>    withLatestFrom(dragElement$),</code>
+            <code>    <mark>sampleTime(200),</mark></code>
+            <code>    tap(([{ x, y }, dragEl]) => moveDragElement(dragEl, x, y)),</code>
+            <code>  );</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Then drop the element</h2>
+        <pre>
+            <code>const finishMovement$ = dragend$</code>
+            <code>  .pipe(</code>
+            <code>    withLatestFrom(previewElement$, dragElement$),</code>
+            <code>    tap(([_, previewEl, dragEl]) => {</code>
+            <code>      previewEl.remove();</code>
+            <code>      dragEl.classList.remove('active');</code>
+            <code>    }),</code>
+            <code>  );</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Don't forget to subscibe</h2>
+        <pre>
+            <code>movePreviewElement$.subscribe(() => {});</code>
+            <code>moveDragElement$.subscribe(() => {});</code>
+            <code>finishMovement$.subscribe(() => {});</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>That's it! So simple</h2>
+        <p></p>
+        <footer>я не буду приводити код на JS для того, щоб написати цей приклад,
+            адже думаю, що всі з присутніх можуть уявити як би потрібно було
+            реалізувати це при допомозі таймаутів і if патерна
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Save Example</h2>
+        <p>Video</p>
+        <footer>А тепер розглянемо приклад з Vue алікейшена як реалізувати
+            функціональність save кнопки з різними статусами.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink" style="font-size: 90px;">Vue.js + Rx.js</h2>
+        <footer>Для інтергації Vue з Rx є бібліотека
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>vue-rx</h2>
+        <p>RxJS integration for Vue.js.</p>
+        <p>Handles subsribtion/unsubscription for you.</p>
+        <footer>Це офіційна бібліотека від розробників Vue. 
+            я не буду розказувати про підклюення, лише про основну ціль
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Subscriptions</h2>
+        <p></p>
+        <pre>
+            <code>export default {</code>
+            <code>  name: 'save-changes',</code>
+            <code>  subscriptions: function () {</code>
+            <code>    return {</code>
+            <code>      statusMessage: new Observable(...)</code>
+            <code>    }</code>
+            <code>  }</code>
+            <code>};</code>
+        </pre>
+        <pre class="next">
+            <code><!-- bind to it normally in templates --></code>
+            <code><p>{{ msg }}</p></code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>v-stream</h2>
+        <pre>
+            <code><v-btn v-stream:click="save$">Save</v-btn></code>
+        </pre>
+        <pre class="next">
+            <code>export default {</code>
+            <code>  name: 'save-changes',</code>
+            <code>  domStreams: ['save$'],</code>
+            <code>  subscriptions () {</code>
+            <code>    return {</code>
+            <code>      statusMessage: this.save$.pipe(</code>
+            <code>        map(() => 'Saving')</code>
+            <code>      )</code>
+            <code>    }</code>
+            <code>  }</code>
+            <code>};</code>
+        </pre>
+        <footer>vue-rx provides the v-stream directive which allows you 
+            to stream DOM events to an Rx Subject. The syntax is similar to v-on 
+            where the directive argument is the event name, and the binding value 
+            is the target Rx Subject.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Vuex Store</h2>
+        <img src="./pictures/vuex.png" alt="">
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Store</h2>
+        <pre>
+            <code>const store = {</code>
+            <code>  state: {</code>
+            <code>    status: Status.Initial,</code>
+            <code>  },</code>
+            <code>  mutations: {</code>
+            <code>    setStatus(state, { status }) {</code>
+            <code>      state.status = status;</code>
+            <code>    },</code>
+            <code>  },</code>
+            <code>  actions: {</code>
+            <code>    save({ commit }) {</code>
+            <code>      commit('setStatus', { status: Status.Saving });</code>
+            <code>      saver.save();</code>
+            <code>    },</code>
+            <code>    setStatus({ dispatch, commit }, data) {</code>
+            <code>      commit('setStatus', data);</code>
+            <code>    },</code>
+            <code>  },</code>
+            <code>};</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>How Vue-rx + Vuex?</h2>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Vue-rx - Vuex communication</h2>
+        <img src="./pictures/rx-vuex.png" alt="">
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <pre class="next">
+            <code>export default {</code>
+            <code>  name: 'save-changes',</code>
+            <code>  domStreams: ['save$'],</code>
+            <code>  subscriptions () {</code>
+            <code>    return {</code>
+            <code>      statusMessage: this.save$.pipe(</code>
+            <code>        map(() => 'Saving')</code>
+            <code>      )</code>
+            <code>    }</code>
+            <code>  },</code>
+            <code>  methods: {</code>
+            <code>    ...mapActions('saveModule', ['save'])</code>
+            <code>  }</code>
+            <code>};</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <pre class="next">
+            <code>export default {</code>
+            <code>  name: 'save-changes',</code>
+            <code>  domStreams: ['save$'],</code>
+            <code>  subscriptions () {</code>
+            <code>  const status$ = this.$watchAsObservable('status', { immediate: true })</code>
+            <code>    .pluck('newValue')</code>
+            <code>    .share();</code>
+            <code>    return {</code>
+            <code>      statusMessage: status$.map(this.getStatusMessages),</code>
+            <code>    }</code>
+            <code>  },</code>
+            <code>  computed: {</code>
+            <code>    ...mapState('saveModule', ['status']),</code>
+            <code>  }</code>
+            <code>};</code>
+        </pre>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>In what part of Vue app Rx may be used?</h2>
+        <img src="./pictures/rx-usage.png" alt="">
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Best practises, Ideas</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>How to start?</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>OMG Rx.js is so confusing!</h2>
+        <p class="next">Stop worrying about the operators</p>
+        <p class="next">Seriously!</p>
+        <footer>Rx.js заставляє тебе почуватись зляканим, самотнім, безпомічним?
+            Перестань хвилюватись про те, який оператор використати...
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Observables are not scarier than promises</h2>
+        <pre>
+            <code>promise.then(resolveFn);</code>
+        </pre>
+        <pre>
+            <code>observable.subscribe(nextFn);</code>
+        </pre>
+        <p>Then try to use 'map' to chain observables.</p>
+        <footer>Observables не страшніші, ніж проміси, якщо не використовувати оператори.
+            Ти можеш почати використовувати Observables прямо зараз. Просто, 
+            підписуєшся на них і далі пишеш імперативний код.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>What Operator Do I Use???</h2>
+        <p>Remain calm, it's ok</p>
+        <p>Use operators that you know</p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Operator Decision Tree</h2>
+        <img src="./pictures/tree.png" alt="">
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>DO NOT Rx All the things</h2>
+        <p>You can build your app as one big observable...<br/> but please don't</p>
+        <p></p>
+        <footer>Rx - дійсно потужна річ. І коли ви добре розібрались з ним і правильно
+            використовуєте, він робить ваш код добре читаємим, але ви повинні використовувати
+            його, де це дійсно найкрещ підходить
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Use Rx where it's best suited</h2>
+        <ul>
+            <li>Composing multiple events together</li>
+            <li>Adding delay</li>
+            <li>Clientside backpressure</li>
+            <li>Coordination async tasks</li>
+            <li>When cancellation is required</li>
+        </ul>
+        <footer>1) для складного юі (як драг-дроп)
+            2) додавання різних затримок, таймаутів
+            3) контролювати back pressure потоку (debounce, throttle, sample)
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Rx - is so much FUN</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Thank you</h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
         <h2></h2>
         <p></p>
         <footer>
@@ -342,6 +842,25 @@
         <footer>
         </footer>
     </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+
 
     <section class="slide">
         <h2>Presentation Dev Builder</h2>

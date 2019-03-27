@@ -23,7 +23,7 @@ function init() {
   const dragElement$ = dragstart$
     .pipe(
       map(({ x, y }) => document.elementFromPoint(x, y)),
-      tap((dragEl) => { dragEl.classList.add('active'); }),
+      tap(dragEl => dragEl.classList.add('active')),
       share(),
     );
 
@@ -31,9 +31,7 @@ function init() {
     .pipe(
       withLatestFrom(dragElement$),
       map(([{ x, y }, dragEl]) => createPreviewElement(dragEl, x, y)),
-      tap((previewElement) => {
-        body.appendChild(previewElement);
-      }),
+      tap(previewElement => body.appendChild(previewElement)),
       share(),
     );
 
@@ -59,9 +57,9 @@ function init() {
       }),
     );
 
-  movePreviewElement$.subscribe(() => {}, null, () => console.log('end'));
-  moveDragElement$.subscribe(() => {}, null, () => console.log('end'));
-  finishMovement$.subscribe(() => {}, null, () => console.log('end'));
+  movePreviewElement$.subscribe(() => {});
+  moveDragElement$.subscribe(() => {});
+  finishMovement$.subscribe(() => {});
 }
 
 function movePreviewElement(previewEl, x, y) {
