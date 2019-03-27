@@ -18,14 +18,15 @@
 
     <header class="caption">
         <h1>How Reactive Programming simplifies complicated Frontend applications</h1>
-        <p>Yours Truly, Famous Inc.</p>
+        <p>Anna Shavurska, Viseven</p>
     </header>
 
     <section class="slide" id="cover">
         <h2>How Reactive Programming simplifies complicated Frontend applications</h2>
         <p>With &hearts; by <a>Anna Shavurska, Viseven</a></p>
         <figure>
-            <img class="cover w" src="pictures/traffic.jpg" alt="Hands on the orange typewriter in a park" >
+            <!-- <img class="cover w" src="pictures/traffic.jpg" alt="Hands on the orange typewriter in a park" > -->
+            <img class="cover w" src="./pictures/comp3.jpg" alt="">
         </figure>
         <style>
             #cover h2, #cover h3 {
@@ -69,15 +70,15 @@
         <h2>Who I am...</h2>
         <ul>
             <li>8 years as JavaScript Developer</li>
-            <li>eWizard.js Team Lead</li>
+            <li>eWizard.js Team Lead at Viseven</li>
             <li>Frontend Tech Lead</li>
             <li>IT Academy Lead</li>
-            <li>My interests: JS, Node.js, Functional / <br/>Reactive Programming</li> 
+            <li>My interests: JS, Reactive Programming, Node.js</li> 
         </ul>
         <p style="color: grey; font-size: 22px;">Fb: anna.dederkal.1<br/> 
-            Twitter: @AnnaShavurska <br/>
-            Email: a.shavurska@viseven.com</p>
+            Twitter: @AnnaShavurska</p>
         <img src="./pictures/me.jpg" style="position:absolute; right: 100px; top: 100px;" width="200" alt="">
+        <img src="./pictures/viseven.png" style="position:absolute; right: 100px; bottom: 80px;" width="160" alt="">
     </section>
     <!-- <section class="slide">
         <img src="./pictures/team.jpg" class="cover h" alt="">
@@ -86,14 +87,15 @@
         <h2>eWizard</h2>
         <ul>
             <li>A content management platform</li>
-            <li>Top pharma companies</li>
+            <li>Top pharma companies: Bayer, Novartis</li>
             <li>> 50 countries</li>
+            <li>Emails, Presentations, Sites, Surveys</li>
         </ul>
+        <img src="./pictures/ewizard2.jpg" style="position:absolute; right: 80px; top: 121px; width: 400px;" alt="">
     </section>
     <section class="slide">
-        <h2>eWizard</h2>
-        <p>about platform</p>
-        <img src="./pictures/ewizard.png" width="90%" style="box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);" class="place" alt="">
+        <video src="./video/ewizard.mov" class="cover h" autoplay muted cover="none"></video>
+        <!-- <img src="./pictures/ewizard.png" width="90%" style="box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);" class="place" alt=""> -->
     </section>
     <!-- <section class="slide">
         <h2>eWizard Architecture</h2>
@@ -119,8 +121,14 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>Reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change (Wikipedia)</h2>
-        <h2>Reactive programming is programming with asynchronous data streams.(André Staltz)</h2>
+        <figure>
+            <blockquote>
+                <p style="font-size:32px;">Reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change</p>
+            </blockquote>
+            <figcaption>Wikipedia</figcaption>
+        </figure>
+        <!-- <h2>Reactive programming is a declarative programming paradigm concerned with data streams and the propagation of change (Wikipedia)</h2> -->
+        <!-- <h2>Reactive programming is programming with asynchronous data streams.(André Staltz)</h2> -->
         <footer>
             Це декларативна програмна парадигма, що пов'язана із потоками даних та поширенням змін (Вікіпедія)
             Реактивне програмування - це програмування з асинхронними потоками даних (Андре Сталдз?) 
@@ -161,14 +169,14 @@
     </section>
     <section class="slide">
         <h2>Excel Example</h2>
-        <p>gif</p>
+        <video src="./video/sheets.mov" autoplay muted cover="none" style="box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
         <footer>Найбільш відомий всім приклад реактивної системи - це excel.
             Зміни в одній комірці автоматично поширюються на всі комірки,
             які від неї залежать.
         </footer>
     </section>
     <section class="slide">
-        <h2>Stream - is like array in time</h2>
+        <h2>Stream - is like an array in time</h2>
         <p>CATS image</p>
         <footer>Тепер коли ми вже знаємо що таке поширення змін, давайте
             подивимось, що таке потік - це як масив, елементи якого з'являються
@@ -188,8 +196,8 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>Streams: variables, user inputs, properties, events, etc.</h2>
-        <img src="./pictures/dog.jpeg" alt="">
+        <h2>Streams: <br/> - variables, <br/> - user inputs, <br/> - properties, <br/> - events, etc.</h2>
+        <img src="./pictures/dog.jpeg" alt="" class="place r">
         <p></p>
         <footer>Але ми ж можемо створити Потік не лише з обробника події, а з будь-чого:
             із змінної, властивості, даних, введених користувачем...
@@ -243,7 +251,7 @@
         </footer>
     </section>
     <section class="slide">
-        <h2 class="shout shrink" style="font-size: 90px;">Rx - Reactive eXtensions</h2>
+        <h2 class="shout shrink" style="font-size: 90px;">Rx - Reactive<br/> eXtensions</h2>
         <footer>RxJS is one of the hottest libraries in web development today. 
             Offering a powerful, functional approach for dealing with events 
             and with integration points into a growing number of frameworks, 
@@ -254,9 +262,14 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>An API for asynchronous programming
-            with observable streams</h2>
-        <p></p>
+        <figure>
+            <blockquote>
+                <p style="font-size:42px;color:white;">An API for asynchronous programming
+                        with observable streams</p>
+            </blockquote>
+            <figcaption>reactivex.io</figcaption>
+        </figure>
+        <img src="./pictures/reactivex_bg.jpg" class="cover w" alt="">
         <footer>
         </footer>
     </section>
@@ -341,20 +354,20 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>Let’s think about writing complex SPA (using Vue)</h2>
+        <h2>Let’s think about writing complex SPA</h2>
         <p></p>
         <footer>
         </footer>
     </section>
     <section class="slide">
-        <h2>Managing state stuff is hard.</h2>
+        <h2>Managing state stuff is hard</h2>
         <p></p>
         <footer>
         </footer>
     </section>
     <section class="slide">
         <h2>Vuex makes it simple (not necessarily easy)</h2>
-        <p>but there is a problem with Vuex: it doesn’t do anything to help you manage async code.</p>
+        <p class="next">but there is a problem with Vuex: it doesn’t do anything to help you manage async code.</p>
         <footer>
         </footer>
     </section>
@@ -590,38 +603,32 @@
     </section>
     <section class="slide">
         <h2>Subscriptions</h2>
-        <p></p>
         <pre>
             <code>export default {</code>
             <code>  name: 'save-changes',</code>
-            <code>  subscriptions: function () {</code>
-            <code>    return {</code>
+            <code>  subscriptions: {</code>
             <code>      statusMessage: new Observable(...)</code>
-            <code>    }</code>
             <code>  }</code>
             <code>};</code>
         </pre>
         <pre class="next">
-            <code><!-- bind to it normally in templates --></code>
-            <code><p>{{ msg }}</p></code>
+            <code>//bind to it normally in templates</code>
+            <code>&lt;p&gt;{{ msg }}&lt;/p&gt;</code>
         </pre>
         <footer>
         </footer>
     </section>
-    <section class="slide">
+    <section class="slide small-code">
         <h2>v-stream</h2>
         <pre>
-            <code><v-btn v-stream:click="save$">Save</v-btn></code>
+            <code>&lt;v-btn v-stream:click="save$"&gt;Save&lt;/v-btn&gt;</code>
         </pre>
         <pre class="next">
             <code>export default {</code>
-            <code>  name: 'save-changes',</code>
             <code>  domStreams: ['save$'],</code>
             <code>  subscriptions () {</code>
             <code>    return {</code>
-            <code>      statusMessage: this.save$.pipe(</code>
-            <code>        map(() => 'Saving')</code>
-            <code>      )</code>
+            <code>      statusMessage: this.save$.pipe(map(() => 'Saving'))</code>
             <code>    }</code>
             <code>  }</code>
             <code>};</code>
@@ -634,21 +641,17 @@
     </section>
     <section class="slide">
         <h2>Vuex Store</h2>
-        <img src="./pictures/vuex.png" alt="">
+        <img src="./pictures/vuex.png" class="place r" alt="">
         <footer>
         </footer>
     </section>
-    <section class="slide">
-        <h2>Store</h2>
+    <section class="slide small-code">
+        <!-- <h2>Store</h2> -->
         <pre>
             <code>const store = {</code>
-            <code>  state: {</code>
-            <code>    status: Status.Initial,</code>
-            <code>  },</code>
+            <code>  state: { status: Status.Initial }</code>
             <code>  mutations: {</code>
-            <code>    setStatus(state, { status }) {</code>
-            <code>      state.status = status;</code>
-            <code>    },</code>
+            <code>    setStatus(state, { status }) { state.status = status; }</code>
             <code>  },</code>
             <code>  actions: {</code>
             <code>    save({ commit }) {</code>
@@ -665,7 +668,7 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>How Vue-rx + Vuex?</h2>
+        <h2>How to use Vue-rx + Vuex?</h2>
         <footer>
         </footer>
     </section>
@@ -676,32 +679,21 @@
         </footer>
     </section>
     <section class="slide">
-        <h2></h2>
-        <pre class="next">
-            <code>export default {</code>
-            <code>  name: 'save-changes',</code>
-            <code>  domStreams: ['save$'],</code>
-            <code>  subscriptions () {</code>
-            <code>    return {</code>
-            <code>      statusMessage: this.save$.pipe(</code>
-            <code>        map(() => 'Saving')</code>
-            <code>      )</code>
-            <code>    }</code>
-            <code>  },</code>
+        <h2>Dispatch Action</h2>
+        <pre>
+            <!-- <code>export default {</code> -->
             <code>  methods: {</code>
             <code>    ...mapActions('saveModule', ['save'])</code>
             <code>  }</code>
-            <code>};</code>
+            <!-- <code>};</code> -->
         </pre>
         <footer>
         </footer>
     </section>
     <section class="slide">
-        <h2></h2>
-        <pre class="next">
+        <!-- <h2></h2> -->
+        <pre>
             <code>export default {</code>
-            <code>  name: 'save-changes',</code>
-            <code>  domStreams: ['save$'],</code>
             <code>  subscriptions () {</code>
             <code>  const status$ = this.$watchAsObservable('status', { immediate: true })</code>
             <code>    .pluck('newValue')</code>
@@ -806,487 +798,62 @@
         <footer>
         </footer>
     </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2></h2>
-        <p></p>
-        <footer>
-        </footer>
-    </section>
-
-
-    <section class="slide">
-        <h2>Presentation Dev Builder</h2>
-        <p class="next">Crashes when 11 users run build concurrently</p>
-        <img src="./pictures/webpack.png" class="place" style="top: 60%;" alt="">
-    </section>
-    <section class="slide">
-        <h2>What should we do?</h2>
-        <img src="./pictures/what.png" class="place" width="30%" alt="">
-    </section>
-    <section class="slide">
-        <h2 class="shout shrink" style="font-size: 90px;">How Node.js works?</h2>
-        <footer>
-            А тепер давайте розберемось як працює Node.js, щоб зрозуміти як можна
-            оптимізувати наш конвертор.
-        </footer>
-    </section>
-    <section class="slide">
-        <!-- <h2>Who should care about this?</h2> -->
-        <img src="./pictures/why.jpg" class="cover h" alt="">
-        <footer>If you're writing anything more complicated than a brief command-line script, 
-            reading this should help you write higher-performance, more-secure applications.</footer>
-    </section>
-    <section class="slide">
-        <h2 class="place"style="text-align:center;width: 700px;">
-            Node.js is good for <br/>Highly-scalable, Data-intensive, <br/>
-            Real-time apps</h2>
-        <footer>Node.js був спроектований, для того, щоб будувати високо-масштабовані 
-            мережеві додатки, що працюють в реальному часі.
-            А це досягається завдяки не блокуючій асинхронній природі Node.js.
-        </footer>
-    </section>
-    <section class="slide">
-        <h2 class="place"style="text-align:center;width: 700px;font-weight:bold;">... because of Non-blocking Asynchronous Architecture</h2>
-    </section>
-    <section class="slide">
-        <video src="./video/non-block.mp4" class="cover w" autoplay muted cover="none"></video>
-        <footer>Давайте розглянемо на прикладі, що мається на увазі під Не бокуючою Асинхронною
-            Архітектурою.
-            Коли ви ідете в ресторан, офіціант приходить до столика, бере ваше замовлення і
-            йде на кухню. Після цього він може обслуговувати інший столик, в той час коли Шеф 
-            готує вашу страву. Тобто одна людина може обслуговувати багато різних столиків.
-            Офіціант не повинен чекати поки повар приготує страву для одного столика перед тим
-            як обслуговувати інший. Це те що ми називаємо НЕ Блокуюча або Асинхронна архітектура.
-            І це як Node архітектура працює: офіціант - це як Один Потік, виділений, щоб 
-            опрацьовувати одразу багато запитів.
-        </footer>
-    </section>
-    <section class="slide">
-        <video src="./video/block.mp4" class="cover w" autoplay muted cover="none"></video>
-        <footer>На противагу Асинхронній архітектурі є Синхронна архітектура.
-            Уявіть, що ви пішли до іншого ресторану, де офіціант, що був вам виділений,
-            бере у вас замовлення, іде на кухню, передає Шефу і чекає поки ваше замовлення буде 
-            готове. В цей момент він більше нічого не робить, не обслуговує інший столик, лише
-            чекає.
-            Це і називається Синхронною архітектурою. І це те як сервіси побудовані при 
-            допомозі фреймворків Asp.net або Rails працюють з коробки.
-            Давайте подивимось як це працює в термінології сервера і процесів.
-        </footer>
-    </section>
-    <section class="slide">
-        <video src="./video/problem.mp4" class="cover w" autoplay muted cover="none"></video>
-        <footer>Коли на сервер приходить запит, виділяється процес, щоб його обробити.
-            І коли відбувається запит в базу даних, ми знаємо, що це може зайняти деякий
-            час. Протягом цього часу наш процес просто сидить і чекає, і він не може обслуговувати
-            іншого клієнта. Тобто нам для цього потрібен ще один процес.
-            Уявіть, що відбувається, коли нам потрібно опрацювати велику кількість
-            одночасних клієнтів. В деякий момент часу нам може не вистачити процесів,
-            щоб обслужити всіх цих клієнтів. 
-            Тому новий клієнт буде мусити чекати поки з'явиться вільний процес.
-            Або якщо ми не хочемо, щоб він чекав, нам потрібно збільшити
-            потужності нашого сервера.
-            Але з такою архітектурою ми не використовуємо ресурси продуктивно.
-            І це проблема Блокуючої архітектури.
-        </footer>
-    </section>
-    <section class="slide">
-        <img src="./pictures/event-loop.jpg" class="cover w"/>
-        <footer>Давайте розглянемо як працює Node.js. Коли на сервер приходить
-            один запит, він обробляється процесом. Якщо в цей момент йому потрібно
-            почекати, поки опрацюється запит в базу даних, цей процес вже може
-            обслуговувати інший запит. Коли БД приготує результат, вона покладе
-            меседж в Event queue (чергу подій). Наш процес постійно моніторить
-            чергу подій, тому коли там з'явиться меседж, він його опрацює.
-            По суті, наш процес - це цикл, який постійно опрацьовує якісь 
-            колбеки і запити, тому його і називають Event Loop.
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>Node.js is Single Threaded<sup>*</sup></h2>
-        <p style="margin-top:340px;" class="next"><sup>*</sup>Except when it's not</p>
-        <img src="./pictures/wow.gif" class="place right next" alt="">
-        <footer>Аналізуючи те, що ми розглянули, ми можемо дійти висновку,що 
-            Node.js - однопоточний. І це правда за винятком того, коли 
-            НІ (це не так). І таке буває...
-        </footer>
-    </section>
-    <section class="slide">
-        <h2 class="place"style="text-align:center;width: 700px;">All JavaScript, V8, and the Event Loop run in one thread called
-            Main Thread<sup>*</sup>
-        </h2>
-        <p style="margin-top:360px;" class="next"><sup>*</sup>But Node.js has C++ code as well</p>
-        <footer>Це означає, що весь JavaScript, тобто всі ваші файли, 
-            JavaScript ноди (адже нода має частину, яка написана на JS),
-            більше того, сам V8, а також event loop. Весь цей код відпрацьовує
-            в одному єдиному потоці, який ми називаємо Головним потоком.
-        </footer>
-    </section>
-    <section class="slide">
-        <img src="./pictures/worker-pool1.png" class="cover w"/>
-        <footer>Worker Pool 
-            Node's Worker Pool is implemented in libuv (docs), which exposes 
-            a general task submission API.
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>What code runs on the Worker Pool?</h2>
-        <ol>
-            <li>I/O-intensive
-                <ol>
-                    <li>DNS</li>
-                    <li>File System</li>
-                </ol>
-            </li>
-            <li>
-                CPU-intensive
-                <ol>
-                    <li>Crypto</li>
-                    <li>Zlib</li>
-                </ol>
-            </li>
-        </ol>
-        <footer>
-            Node uses the Worker Pool to handle "expensive" tasks. This includes 
-            I/O for which an operating system does not provide a non-blocking version,
-            as well as particularly CPU-intensive tasks.
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>Node's scalability = small 
-            number of threads to handle many clients</h2>
-        <img src="./pictures/house.png" width="90%" alt="">
-        <footer>If Node can make do with fewer threads, then it can spend more 
-            of your system's time and memory working on clients rather than 
-            on paying space and time overheads for threads (memory, 
-            context-switching). But because Node has only a few threads, you must 
-            structure your application to use them wisely.</footer>
-    </section>
-    <section class="slide">
-        <h2>Node is fast when the work associated with each client at any 
-            given time is "small"</h2>
-        <img src="./pictures/small.jpg" class="place next" style="top: 60%; left: 70%;" width="440px" alt="">
-    </section>
-    <section class="slide">
-        <h2>Do not block neither the Event Loop nor the Worker Pool:</h2>
-        <ol>
-            <li>Performance</li>
-            <li>Security</li>
-        </ol>
-        <footer>Performance: If you regularly perform heavyweight activity 
-            on either type of thread, the throughput (requests/second) of your 
-            server will suffer.
-            Security: If it is possible that for certain input one of your 
-            threads might block, a malicious client could submit this 
-            "evil input", make your threads block, and keep them from working 
-            on other clients. This would be a Denial of Service attack.
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>The fair treatment of clients is thus the responsibility of your application. </h2>
-        <img src="./pictures/eq.jpg" class="next place" style="top:60%;" width="40%" alt="">
-        <footer>Вже не ОС має стежити за рівноправністю клієнтів, а ви
-            This means that you shouldn't do too much work for any client 
-            in any single callback or task.</footer>
-    </section>
-    <section class="slide">
-        <h2 class="shout shrink">Don't block <br/>the Event Loop</h2>
-    </section>
-    <section class="slide">
-        <h2>Don't use .sync() methods! Never! Ever!</h2>
-        <p>They are executed in the Main thread, not in the Worker Pool</p>
-        <ul>
-            <li>Encryption</li>
-            <li>Compression</li>
-            <li>File system</li>
-            <li>Child process</li>
-        </ul>
-        <footer>These APIs are intended for scripting convenience, but are not 
-            intended for use in the server context. If you execute them on 
-            the Event Loop, they will take far longer to complete than a typical 
-            JavaScript instruction, blocking the Event Loop.</footer>
-    </section>
-    <section class="slide">
-        <h2>Regular Expression</h2>
-        <ul>
-            <li>A vulnerable regular expression is one on which your regular 
-                expression engine might take exponential time, exposing you to 
-                REDOS on "evil input". </li>
-        </ul>
-    </section>
-    <section class="slide">
-        <h2>Regular Expression: REDOS example</h2>
-        <pre>
-            <code>if (fileName.match(/(\/.+)+$/)) {</code>
-            <code>    console.log('valid path');</code>
-            <code>}</code>
-            <code>// "//////////////////.../\n"</code>
-        </pre>
-        <footer>If a client queries with filePath ///.../\n (100 /'s followed by 
-            a newline character that the regexp's "." won't match), then the Event Loop 
-            will take effectively forever, blocking the Event Loop. This client's REDOS 
-            attack causes all other clients not to get a turn until the regexp match 
-            finishes.</footer>
-    </section>
-    <section class="slide">
-        <h2>Regular Expression: Best practices</h2>
-        <ul>
-            <li>Tools to check safety (safe-regex, rxxr2)</li>
-            <li>Node-re2 module, which uses Google's blazing-fast RE2 regexp engine</li>
-            <li>For obvious regexps use modules (ip-regex) or libs (regexlib.com)</li>
-        </ul>
-    </section>
-    <section class="slide">
-        <h2>JSON: DOS</h2>
-        <ol>
-            <li>JSON is blocking</li>
-            <li>50MB - 1.7 seconds to parse</li>
-        </ol>
-    </section>
-    <section class="slide">
-        <h2>JSON: Best practices</h2>
-        <ol>
-            <li>JSONStream</li>
-            <li>Big-Friendly JSON</li>
-        </ol>
-    </section>
-    <section class="slide">
-        <h2>To summarize:</h2>
-        <ol>
-            <li>Be cautious of user's input (not only validate)</li>
-            <li>Bound the input and reject inputs that are too long</li>
-            <li>Think of "computational complexity"</li>
-            <li>Safe RegExp</li>
-            <li>Async or Stream JSON</li>
-            <li>NO .sync()</li>
-        </ol>
-    </section>
     <!-- <section class="slide">
-        <h2>A lot slides describing how Node.js works...</h2>
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2></h2>
+        <p></p>
+        <footer>
+        </footer>
     </section> -->
-    <section class="slide">
-        <h2 class="shout shrink" style="font-size:65px;">
-            Complex calculations without<br/> blocking the Event Loop</h2>
-        <!-- <ul>
-            <li>Partitioning - Виконання по частинам</li>
-            <li>Offloading - Відвантажування</li>
-        </ul> -->
-    </section>
-    <section class="slide">
-        <h2>Partitioning</h2>
-        <p>Partition your calculations so that each runs on the Event Loop but 
-            regularly yields (gives turns to) other pending events.</p>
-        <p>Save the state in a closure.</p>
-    </section>
-    <section class="slide">
-        <h2>Partitioning Example</h2>
-        <pre>
-            <code class="js">for (let i = 0; i < n; i++){</code>
-            <code class="js">    sum += i;</code>
-            <code class="js">}</code>
-            <code class="js">let avg = sum / n;</code>
-            <code class="js">console.log('avg: ' + avg);</code>
-        </pre>
-    </section>
-    <section class="slide small-code">
-        <h2>Partitioning Example</h2>
-        <pre>
-            <code>function asyncAvg(n, avgCB) {</code>
-            <code>    let sum = 0;</code>
-            <code>    function add(i, cb) {</code>
-            <code>        sum += i;</code>
-            <code>        if (i !== n) {</code>
-            <code>            setImmediate(add.bind(null, i+1, cb));</code>
-            <code>        } else {</code>
-            <code>            cb(sum);</code>
-            <code>        }</code>
-            <code>    }</code>
-            <code>    add(1, (sum) => avgCB(sum / n));</code>
-            <code>} </code>
-        </pre>
-    </section>
-    <section class="slide">
-        <h2>Partitioning isn't always a good choice</h2>
-        <img src="./pictures/orc.jpg" class="place b" width="60%" alt="">
-        <footer>If you need to do something more complex, partitioning is not a good option. 
-            This is because partitioning uses only the Event Loop, and you won't benefit 
-            from multiple cores almost certainly available on your machine. 
-            Remember, the Event Loop should orchestrate client requests, not fulfill 
-            them itself.</footer>
-    </section>
-    <section class="slide">
-        <h2>Offloading</h2>
-        <p>For a complicated task, move the work off of the Event Loop onto 
-            another Thread.</p>
-        <footer>This is because partitioning uses only the Event Loop, and you won't 
-            benefit from multiple cores almost certainly available on your machine. 
-            Remember, the Event Loop should orchestrate client requests, not fulfill 
-            them itself. For a complicated task, move the work off of the Event Loop 
-            onto a Worker Pool.</footer>
-    </section>
-    <section class="slide">
-        <h2>1. Offloading - built-in Node Worker Pool</h2>
-        <ol>
-            <li>C++ addon using N-API</li>
-            <li>node-webworker-threads module</li>
-        </ol>
-        <footer>You can use the built-in Node Worker Pool by developing a C++ addon. 
-            On older versions of Node, build your C++ addon using NAN, and 
-            on newer versions use N-API. node-webworker-threads offers 
-            a JavaScript-only way to access Node's Worker Pool.</footer>
-    </section>
-    <section class="slide small-code">
-        <!-- <h2>WebWorker Threads Example</h2> -->
-        <pre>
-            <code class="js">const Worker = require('webworker-threads').Worker;</code>
-            <code class="js">require('http').createServer((req,res) => {</code>
-            <code class="js">    const fibo = new Worker(() => {</code>
-            <code class="js">       function fibo (n) {</code>
-            <code class="js">           return n > 1 ? fibo(n - 1) + fibo(n - 2) : 1;</code>
-            <code class="js">       }</code>
-            <code class="js">       this.onmessage = (event) => {</code>
-            <code class="js">           postMessage(fibo(event.data));</code>
-            <code class="js">       }</code>
-            <code class="js">    });</code>
-            <code class="js">    fibo.onmessage = (event) => res.end('fib(40) = ' + event.data);</code>
-            <code class="js">    fibo.postMessage(40);</code>
-            <code class="js">}).listen(port);</code>
-        </pre>
-    </section>
-    <section class="slide">
-        <h2>2. Offloading - your own Worker Pool</h2>
-        <ol>
-            <li>Child Process</li>
-            <li>Cluster</li>
-        </ol>
-        <footer>You can create and manage your own Worker Pool dedicated to computation 
-            rather than Node's I/O-themed Worker Pool. The most straightforward 
-            ways to do this is using Child Process or Cluster.
-            You should not simply create a Child Process for every client. You 
-            can receive client requests more quickly than you can create and manage 
-            children, and your server might become a fork bomb.</footer>
-    </section>
-    <section class="slide">
-        <h2>Do not create a FORK BOMB</h2>
-    </section>
-    <section class="slide">
-        <h2>Cluster Example</h2>
-        <pre>
-            <code class="js">const cluster = require('cluster');</code>
-            <code class="js">const http = require('http');</code>
-            <code class="js">const numCPUs = require('os').cpus().length;</code>
-            <code class="js"></code>
-            <code class="js">if (cluster.isMaster) {</code>
-            <code class="js">    masterProcess();</code>
-            <code class="js">} else {</code>
-            <code class="js">    childProcess();  </code>
-            <code class="js">}                </code>
-        </pre>
-    </section>
-    <section class="slide">
-        <h2>Cluster Example</h2>
-        <pre>
-            <code class="js">function masterProcess() {</code>
-            <code class="js">    console.log(`Master ${process.pid} is running`);</code>
-            <code class="js">    for (let i = 0; i < numCPUs; i++) {</code>
-            <code class="js">        console.log(`Forking process number ${i}...`);</code>
-            <code class="js">        cluster.fork();</code>
-            <code class="js">    }</code>
-            <code class="js">    process.exit();</code>
-            <code class="js">}</code>
-        </pre>
-    </section>
-    <section class="slide">
-        <h2>Cluster Example</h2>
-        <pre>
-            <code class="js">function childProcess() {</code>
-            <code class="js">    console.log(`Worker ${process.pid} started and finished`);</code>
-            <code class="js">    </code>
-            <code class="js">    process.exit();</code>
-            <code class="js">}</code>
-        </pre>
-    </section>
-    <section class="slide">
-        <h2>Downside of offloading - Communication Costs</h2>
-        <footer>For serialization concerns, see the section on JSON DOS.</footer>
-    </section>
-    <section class="slide">
-        <h2>Distinguish between CPU-intensive and I/O-intensive tasks because 
-            they have markedly different characteristics</h2>
-        <footer>A CPU-intensive task only makes progress when its Worker is scheduled,
-             and the Worker must be scheduled onto one of your machine's logical cores.
-              If you have 4 logical cores and 5 Workers, one of these Workers cannot 
-              make progress. As a result, you are paying overhead (memory and 
-              scheduling costs) for this Worker and getting no return for it.</footer>
-    </section>
-    <section class="slide">
-        <h2>Presentation Dev Builder</h2>
-        <ol>
-            <li>Cluster was used</li>
-            <li>4 times more concurrent builds running ()</li>
-        </ol>
-    </section>
-    <section class="slide">
-        <h2 class="cover" style="width: 700px;">Is Node.js really a good fit?</h2>
-        <footer class="footer">
-            Node excels for I/O-bound work, but for expensive computation it might not be the best option.
-        </footer>
-    </section>
-    <section class="slide black">
-        <h2 class="place" style="color: white; text-align:center;font-size:70px;width: 700px;">Don't block you mind, Event Loop, Worker Pool</h2>
-        <footer class="footer">
-        </footer>
-    </section>
-    <section class="slide">
-        <img src="./pictures/ask.jpeg" class="place" width="45%" alt="">
-    </section>
+
+
     <!-- <section class="slide">
         <h2>Shower key features</h2>
         <ol>
