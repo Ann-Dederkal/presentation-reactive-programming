@@ -23,14 +23,19 @@
 
     <section class="slide" id="cover">
         <h2>How Reactive Programming simplifies complicated Frontend applications</h2>
-        <p>With &hearts; by <a>Anna Shavurska, Viseven</a></p>
+        <p><span>With &hearts; by <a>Anna Shavurska, Viseven</a></span></p>
         <figure>
             <!-- <img class="cover w" src="pictures/traffic.jpg" alt="Hands on the orange typewriter in a park" > -->
             <img class="cover w" src="./pictures/comp3.jpg" alt="">
         </figure>
+        <img src="./pictures/js-fest.png" style="position:absolute; right: 6px; bottom: 10px;width:110px;" alt="">
+        <img src="./pictures/qr.png" style="position:absolute; right: 121px; bottom: 10px; width:110px;"  alt="">
         <style>
-            #cover h2, #cover h3 {
+            #cover h2, #cover h3{
                 margin: 30px 0 0;
+            }
+            #cover h2, #cover h3,
+            .cover-slide h2 {
                 color: white;
                 text-align: center;
                 font-size: 74px;
@@ -48,6 +53,10 @@
                 color: white;
                 font-style: italic;
                 font-size: 20px;
+                position: absolute;
+                padding: 5px;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 0 10px;
             }
 
             #cover p a {
@@ -63,6 +72,21 @@
             .slide::after{
                 content: none;
             }
+            .slide a{
+                color: black;
+            }
+            .shower.full video.next{
+                display: none;
+            }
+            .shower.full video.next.active {
+                display: block;
+            }
+            .slide pre.left{
+                margin-left: 60px;
+            }
+            .slide pre.code code{
+                line-height: 1.6;
+            }
         </style>
     </section>
 
@@ -70,19 +94,70 @@
         <h2>Who I am...</h2>
         <ul>
             <li>8 years as JavaScript Developer</li>
-            <li>eWizard.js Team Lead at Viseven</li>
+            <li><a target="blank" href="https://docs.ewizardjs.org/">eWizard.js</a> Team Lead at 
+                <a target="blank" href="https://viseven.com/">Viseven</a></li>
             <li>Frontend Tech Lead</li>
             <li>IT Academy Lead</li>
-            <li>My interests: JS, Reactive Programming, Node.js</li> 
+            <li>Vue, Vuex, Vue-rx, Rx.js...</li> 
         </ul>
-        <p style="color: grey; font-size: 22px;">Fb: anna.dederkal.1<br/> 
-            Twitter: @AnnaShavurska</p>
+        <p style="color: grey; font-size: 22px;">
+            <a target="blank" href="https://www.facebook.com/anna.dederkal.1">Fb: anna.dederkal.1</a><br/> 
+            <a href="https://twitter.com/AnnaShavurska" target="blank">Twitter: @AnnaShavurska</a></p>
         <img src="./pictures/me.jpg" style="position:absolute; right: 100px; top: 100px;" width="200" alt="">
         <img src="./pictures/viseven.png" style="position:absolute; right: 100px; bottom: 80px;" width="160" alt="">
+        
     </section>
     <!-- <section class="slide">
         <img src="./pictures/team.jpg" class="cover h" alt="">
     </section> -->
+    <section class="slide">
+        <h2 class="shout shrink" style="font-size: 90px;">UI becomes more complicated</h2>
+        <footer>Розробка UI стає все складнішою
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>A move to Reactiveness</h2>
+        <pre>
+            <code class="js">let a = 1;</code>
+            <code class="js">let b = 2;</code>
+            <code class="js">let sum = a + b;</code>
+            <code class="js">console.log(sum); // 3</code>
+            <code class="js">a = 2;</code>
+            <code class="js">console.log(sum); // ? <mark class="next">3</mark></code>          
+        </pre>
+        <video src="./video/sheets.mov" class="next place r" autoplay muted loop cover="none" style="top: 352px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
+        <footer>Розглянемо простенький приклад.
+            Який результат буде виведений в консоль за другим разом? - 3,
+            так як змінна з сумою ми не оновили.
+            Найбільш відомий всім приклад реактивної системи - це excel.
+            Зміни в одній комірці автоматично поширюються на всі комірки,
+            які від неї залежать.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Reactive Code</h2>
+        <pre>
+            <code class="js">let a = 1;</code>
+            <code class="js">let b = 2;</code>
+            <code class="js">let sum = a + b;</code>
+            <code class="js">console.log(sum); // 3</code>
+            <code class="js">a = 2;</code>
+            <code class="js">console.log(sum); // ? <mark>4</mark></code>          
+        </pre>
+        <img src="./pictures/how.png" class="next place" style="position:absolute; left: 70%" alt="">
+        <footer>цей самий приклад, але якщо цей код є реактивним, то 
+            в результаті ми побачимо в консолі 4. Ось це - магія реативності.
+            Коли нам не потрібно нічого робити, а зміни значень поширились 
+            автоматино.
+        </footer>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink" style="font-size: 90px;">
+            What we're doing
+        </h2>
+        <footer>Розробка UI стає все складнішою
+        </footer>
+    </section>
     <section class="slide">
         <h2>eWizard</h2>
         <ul>
@@ -94,23 +169,13 @@
         <img src="./pictures/ewizard2.jpg" style="position:absolute; right: 80px; top: 121px; width: 400px;" alt="">
     </section>
     <section class="slide">
-        <video src="./video/ewizard.mov" class="cover h" autoplay muted cover="none"></video>
+        <video src="./video/ewizard.mov" loop class="cover h" autoplay muted cover="none"></video>
         <!-- <img src="./pictures/ewizard.png" width="90%" style="box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);" class="place" alt=""> -->
     </section>
     <!-- <section class="slide">
         <h2>eWizard Architecture</h2>
         <img src="./pictures/architecture.png" width="68%" style="top: 61%; box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);" class="place" alt="">
     </section> -->
-    <section class="slide">
-        <h2>Who you are...</h2>
-        <ul>
-            <li>Are you doing Vue?</li>
-            <li class="next">Are you doing Vuex?</li>
-            <li class="next">Are you doing Rx.js?</li>
-            <li class="next">Are you doing Vue-rx?</li>
-            <li class="next">Are you happy with what you're doing?</li>
-        </ul>
-    </section>
 
     <section class="slide">
         <h2 class="shout shrink" style="font-size: 90px;">What reactive programming is...</h2>
@@ -137,47 +202,8 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>Not Reactive Code</h2>
-        <pre>
-            <code>let a = 1;</code>
-            <code>let b = 2;</code>
-            <code>let sum = a + b;</code>
-            <code>console.log(sum); // 3</code>
-            <code>a = 2;</code>
-            <code>console.log(sum); // ? <mark class="next">3</mark></code>          
-        </pre>
-        <footer>Розглянемо простенький приклад.
-            Який результат буде виведений в консоль за другим разом? - 3,
-            так як змінна з сумою ми не оновили.
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>Reactive Code</h2>
-        <pre>
-            <code>let a = 1;</code>
-            <code>let b = 2;</code>
-            <code>let sum = a + b;</code>
-            <code>console.log(sum); // 3</code>
-            <code>a = 2;</code>
-            <code>console.log(sum); // ? <mark class="next">4</mark></code>          
-        </pre>
-        <footer>цей самий приклад, але якщо цей код є реактивним, то 
-            в результаті ми побачимо в консолі 4. Ось це - магія реативності.
-            Коли нам не потрібно нічого робити, а зміни значень поширились 
-            автоматино.
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>Excel Example</h2>
-        <video src="./video/sheets.mov" autoplay muted cover="none" style="box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
-        <footer>Найбільш відомий всім приклад реактивної системи - це excel.
-            Зміни в одній комірці автоматично поширюються на всі комірки,
-            які від неї залежать.
-        </footer>
-    </section>
-    <section class="slide">
         <h2>Stream - is like an array in time</h2>
-        <p>CATS image</p>
+        <img src="./pictures/ice.jpg" width="70%" />
         <footer>Тепер коли ми вже знаємо що таке поширення змін, давайте
             подивимось, що таке потік - це як масив, елементи якого з'являються
             з часом
@@ -186,9 +212,9 @@
     <section class="slide">
         <h2>Stream Example</h2>
         <pre>
-            <code>button.addEventListener(event => {</code>
-            <code>  console.log(event);</code>
-            <code>});</code>
+            <code class="js">button.addEventListener(event => {</code>
+            <code class="js">  console.log(event);</code>
+            <code class="js">});</code>
         </pre>
         <footer>Насправді, для нас тут нічого нового. Тому що навіть звичайний
             обробник події - це дійсно асинхронний Потік - Event Stream.
@@ -205,19 +231,36 @@
         </footer>
     </section>
     <section class="slide">
+        <h2>Propagation of Change</h2>
+        <video src="./video/sheets.mov" class="place" autoplay muted loop cover="none" style="top: 352px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
         <h2>Pull vs Push</h2>
         <p></p>
         <footer>Реактивна система підтримує push підхід
         </footer>
     </section>
-    <section class="slide">
-        <h2>Iterator</h2>
-        <pre>
-            <code>let iterator = someString[Symbol.iterator]();</code>
-            <code>iterator.next(); // { value: "h", done: false }</code>
-            <code>iterator.next(); // { value: "i", done: false }</code>
-            <code>iterator.next(); // { value: undefined, done: true }</code>
+    <section class="slide small-code">
+        <h2>Iterator vs Observable</h2>
+        <div style="display:flex;margin-left:-17px;">
+        <pre style="margin-right:90px;">
+            <code class="js">const hi = 'hi';</code>
+            <code class="js">const iterator = hi[Symbol.iterator]();</code>
+            <code class="js">iterator.next(); // 'h'</code>
+            <code class="js">iterator.next(); // 'i'</code>
+            <code class="js">iterator.next(); // undefined</code>
         </pre>
+        <pre>
+            <code class="js">import { from } from 'rxjs';</code>
+            <code class="js">const observable = from('hi');</code>
+            <code class="js">observable.subscribe((x) => {</code>
+            <code class="js">  console.log(x);</code>
+            <code class="js">});</code>
+            <code class="js">// 'h', 'i'</code>
+        </pre>
+        </div>
         <footer>Давайте розглянемо, що ми маємо в JS для колекцій - це Ітератор
                 Ітератори корисні для колекцій, однак асинхронні дії додають 
                 час в наш код. А Ітератори не дуже добре з цим справляються. 
@@ -225,29 +268,6 @@
                 Що ж ми можемо зробити? Здається нам pull підхід потрібно 
                 змінити на push. А ми знаємо, що для push підходу в JS є колбеки.
                  Якщо об’єднати Ітератор і колбек, в нас вийде Observable                 
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>Observable is basically an Iterable turned inside out</h2>
-        <p>Think of the Observable class as a “push” equivalent to Iterable, which is a “pull”</p>
-        <pre>
-            <code>let observer = {</code>
-            <code>  next: (x) => console.log(x)</code>
-            <code>}</code>
-            <code>myObservable[Symbol.observer](observer);</code>
-        </pre>
-        <footer>
-        </footer>
-    </section>
-    <section class="slide">
-        <h2>In Rx.js</h2>
-        <pre>
-            <code>myObservable.subscribe(function next(x)) {</code>
-            <code>  console.log(x);</code>
-            <code>});</code>
-        </pre>
-        <footer>Тепер коли ми знаємо, що таке Observable, ми можемо 
-            познайомитись з rxjs
         </footer>
     </section>
     <section class="slide">
@@ -267,7 +287,7 @@
                 <p style="font-size:42px;color:white;">An API for asynchronous programming
                         with observable streams</p>
             </blockquote>
-            <figcaption>reactivex.io</figcaption>
+            <figcaption style="color:white;">reactivex.io</figcaption>
         </figure>
         <img src="./pictures/reactivex_bg.jpg" class="cover w" alt="">
         <footer>
@@ -276,22 +296,22 @@
     <section class="slide">
         <h2>Simple Example</h2>
         <pre>
-            <code>button.addEventListener(event => {</code>
-            <code>  console.log(event);</code>
-            <code>});</code>
+            <code class="js">button.addEventListener(event => {</code>
+            <code class="js">  console.log(event);</code>
+            <code class="js">});</code>
         </pre>
         <pre>
-            <code>fromEvent(button, 'click')</code>
-            <code>  .subscribe(event => console.log(event));</code>
+            <code class="js">fromEvent(button, 'click')</code>
+            <code class="js">  .subscribe(event => console.log(event));</code>
         </pre>
         <footer>
         </footer>
     </section>
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Observable Stream</h2>
         <pre>
-            <code>fromEvent(button, 'click') // Observable</code>
-            <code>  .subscribe(event => console.log(event)); // Observer</code>
+            <code class="js">fromEvent(button, 'click') // Observable</code>
+            <code class="js">  .subscribe(event => console.log(event)); // Observer</code>
         </pre>
         <footer>Тут пояснити, що таке observable i observer
         </footer>
@@ -302,20 +322,36 @@
         <p></p>
         <footer>
         </footer>
+    </section> -->
+    <section class="slide cover-slide">
+        <h2 class="place" style="padding: 10px;">Pipes</h2>
+        <img src="./pictures/pipes.jpg" class="cover w" alt="">
     </section>
     <section class="slide">
-        <h2>Operators</h2>
-        <ul>
+        <h2>Operators are Pipeable</h2>
+        <!-- <ul>
             <li>Pure functions</li>
             <li>Filter, select, transform, combine, and compose Observables</li>
             <li>Efficient execution</li>
-        </ul>
+        </ul> -->
+        <pre>
+            <!-- <code class="js">import { concat, filter } from 'rxjs/operators';</code>
+            <code class="js">import { of } from 'rxjs';</code>
+            <code class="js">const sourceOne = of(1, 2, 3);</code>
+            <code class="js">const sourceTwo = of(4, 5, 6);</code> -->
+            <code class="js">const example = sourceOne.pipe(</code>
+            <code class="js">  concat(sourceTwo),</code>
+            <code class="js">  filter(num => num % 2 === 0)</code>
+            <code class="js">);</code>
+            <code class="js">example.subscribe(val => console.log(val));</code>
+            <!-- <code class="js">// 2,4,6</code> -->
+        </pre>
         <footer>Operators are the horse-power behind observables, 
             providing an elegant, declarative solution to complex 
             asynchronous tasks.
         </footer>
     </section>
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Operators</h2>
         <ul>
             <li>map</li>
@@ -330,20 +366,20 @@
     <section class="slide small-code">
         <h2>Operators Example</h2>
         <pre>
-            <code>import { concat, filter } from 'rxjs/operators';</code>
-            <code>import { of } from 'rxjs';</code>
-            <code>const sourceOne = of(1, 2, 3);</code>
-            <code>const sourceTwo = of(4, 5, 6);</code>
-            <code>const example = sourceOne.pipe(</code>
-            <code>  concat(sourceTwo),</code>
-            <code>  filter(num => num % 2 === 0)</code>
-            <code>);</code>
-            <code>example.subscribe(val => console.log(val));</code>
-            <code>// 2,4,6</code>
+            <code class="js">import { concat, filter } from 'rxjs/operators';</code>
+            <code class="js">import { of } from 'rxjs';</code>
+            <code class="js">const sourceOne = of(1, 2, 3);</code>
+            <code class="js">const sourceTwo = of(4, 5, 6);</code>
+            <code class="js">const example = sourceOne.pipe(</code>
+            <code class="js">  concat(sourceTwo),</code>
+            <code class="js">  filter(num => num % 2 === 0)</code>
+            <code class="js">);</code>
+            <code class="js">example.subscribe(val => console.log(val));</code>
+            <code class="js">// 2,4,6</code>
         </pre>
         <footer>//emit values from sourceOne, when complete, subscribe to sourceTwo
         </footer>
-    </section>
+    </section> -->
     <section class="slide">
         <h2 class="shout shrink" style="font-size: 90px;">
             But WTH I need this Reactive stuff?
@@ -354,20 +390,20 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>Let’s think about writing complex SPA</h2>
+        <h2 class="place" style="width:80%;">Let’s think about writing complex SPA</h2>
         <p></p>
         <footer>
         </footer>
     </section>
     <section class="slide">
-        <h2>Managing state stuff is hard</h2>
+        <h2 class="place" style="width:80%;">Managing state stuff is hard</h2>
         <p></p>
         <footer>
         </footer>
     </section>
     <section class="slide">
-        <h2>Vuex makes it simple (not necessarily easy)</h2>
-        <p class="next">but there is a problem with Vuex: it doesn’t do anything to help you manage async code.</p>
+        <h2 class="place" style="width:80%;">Vuex makes it simple <br/>(not necessarily easy)*</h2>
+        <p class="next place b"style="width:80%;">It doesn’t do anything to help you manage async code.</p>
         <footer>
         </footer>
     </section>
@@ -394,13 +430,13 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>Managing async stuff is harder</h2>
+        <h2 class="place" style="width:80%;">Managing async stuff is harder</h2>
         <p></p>
         <footer>
         </footer>
     </section>
     <section class="slide">
-        <h2>RxJS makes it manageable</h2>
+        <h2 class="place" style="width:80%;">RxJS makes it manageable</h2>
         <p></p>
         <footer>
         </footer>
@@ -417,7 +453,7 @@
         <h2>How Rx helps to manage async stuff?</h2>
         <ul>
             <li>Observables are cancelable</li>
-            <li>Rx operators make magic</li>
+            <li>Rx operators are awesome$</li>
         </ul>
         <footer>Проресьорчити це Observables are cancelable
             - Можливістю легко управляти асинхронними діями, які потребують якохсь додаткової логіки управління - при допомозі операторів.
@@ -426,27 +462,46 @@
     </section>
     <section class="slide">
         <h2 class="shout shrink" style="font-size: 90px;">
-            Showcases
+            Drag-n-drop with optimization
         </h2>
         <footer>
             А тепер давайте подивимось реальні приклади
         </footer>
     </section>
     <section class="slide">
-        <h2>Drag-n-drop functionality example with optimization</h2>
-        <p>Video of example</p>
+        <video src="./video/drag.mov" class="place" autoplay muted loop cover="none" style="top: 352px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Example is 
+            <a target="blank" href="https://github.com/Ann-Dederkal/presentation-reactive-programming/tree/master/example">here</a></h2>
+        <video src="./video/ex.mov" autoplay muted loop cover="none" style="top: 352px; box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
+        <footer>
+        </footer>
+    </section>
+    <section class="slide">
+        <h2>Steps:</h2>
+        <ol>
+            <li>Listen mouse events</li>
+            <li>Transform mouse events to drag events</li>
+            <li>Take a draggeable element on dragstart</li>
+            <li>And create a preview element for it</li>
+            <li>Move both: preview element and draggeable element</li>
+            <li>Remove preview element on dragend</li>
+        </ol>
         <footer>
         </footer>
     </section>
     <section class="slide">
         <h2>Create Streams from Mouse Events</h2>
         <pre>
-            <code>mousedown$ = fromEvent(body, 'mousedown')</code>
-            <code> .pipe(map(getCoordsFromEvent));</code>
-            <code>mousemove$ = fromEvent(body, 'mousemove')</code>
-            <code> .pipe(map(getCoordsFromEvent));</code>
-            <code>mouseup$ = fromEvent(body, 'mouseup')</code>
-            <code> .pipe(map(getCoordsFromEvent));</code>
+            <code class="js">mouseDown$ = fromEvent(body, 'mousedown')</code>
+            <code class="js"> .pipe(map(getCoordsFromEvent));</code>
+            <code class="js">mouseMove$ = fromEvent(body, 'mousemove')</code>
+            <code class="js"> .pipe(map(getCoordsFromEvent));</code>
+            <code class="js">mouseUp$ = fromEvent(body, 'mouseup')</code>
+            <code class="js"> .pipe(map(getCoordsFromEvent));</code>
         </pre>
         <footer>
             Давайте розглянемо приклад, як при допомозі Rx легко реалізувати такий драг-дроп з оптимізацією пересування компонентів.
@@ -456,12 +511,12 @@
     <section class="slide">
         <h2>And transform them to Drag Events</h2>
         <pre>
-            <code>const dragstart$ = mousedown$</code>
-            <code>  .pipe(flatMap(() => mousemove$.pipe(takeUntil(mouseup$),take(1))));</code>
-            <code>const dragmove$ = mousedown$</code>
-            <code>  .pipe(flatMap(() => mousemove$.pipe(takeUntil(mouseup$))));</code>
-            <code>const dragend$ = dragstart$</code>
-            <code>  .pipe(flatMap(() => mouseup$.pipe(take(1))));</code>
+            <code class="js">const dragStart$ = mouseDown$</code>
+            <code class="js">  .pipe(flatMap(() => mouseMove$.pipe(takeUntil(mouseup$),take(1))));</code>
+            <code class="js">const dragMove$ = mousedown$</code>
+            <code class="js">  .pipe(flatMap(() => mouseMove$.pipe(takeUntil(mouseup$))));</code>
+            <code class="js">const dragEnd$ = dragStart$</code>
+            <code class="js">  .pipe(flatMap(() => mouseUp$.pipe(take(1))));</code>
         </pre>
         <footer>
         </footer>
@@ -469,12 +524,12 @@
     <section class="slide">
         <h2>Then take a dragged element</h2>
         <pre>
-            <code>const dragElement$ = dragstart$</code>
-            <code>  .pipe(</code>
-            <code>    map(({ x, y }) => document.elementFromPoint(x, y)),</code>
-            <code>    tap(dragEl => dragEl.classList.add('active')),</code>
-            <code>    share(),</code>
-            <code>  );</code>
+            <code class="js">const dragElement$ = dragStart$</code>
+            <code class="js">  .pipe(</code>
+            <code class="js">    map(({ x, y }) => document.elementFromPoint(x, y)),</code>
+            <code class="js">    tap(dragEl => dragEl.classList.add('active')),</code>
+            <code class="js">    share(),</code>
+            <code class="js">  );</code>
         </pre>
         <footer>
         </footer>
@@ -482,13 +537,13 @@
     <section class="slide">
         <h2>And create a preview element</h2>
         <pre>
-            <code>const previewElement$ = dragstart$</code>
-            <code>  .pipe(</code>
-            <code>    withLatestFrom(dragElement$),</code>
-            <code>    map(([{ x, y }, dragEl]) => createPreviewElement(dragEl, x, y)),</code>
-            <code>    tap(previewElement => body.appendChild(previewElement)),</code>
-            <code>    share(),</code>
-            <code>  );</code>
+            <code class="js">const previewElement$ = dragStart$</code>
+            <code class="js">  .pipe(</code>
+            <code class="js">    withLatestFrom(dragElement$),</code>
+            <code class="js">    map(([{ x, y }, dragEl]) => createPreviewElement(dragEl, x, y)),</code>
+            <code class="js">    tap(previewElement => body.appendChild(previewElement)),</code>
+            <code class="js">    share(),</code>
+            <code class="js">  );</code>
         </pre>
         <footer>
         </footer>
@@ -504,13 +559,13 @@
     <section class="slide">
         <h2>Now move a preview element</h2>
         <pre>
-            <code>const movePreviewElement$ = dragmove$</code>
-            <code>  .pipe(</code>
-            <code>    withLatestFrom(previewElement$),</code>
-            <code>    tap(([{ x, y }, previewEl]) => {</code>
-            <code>      movePreviewElement(previewEl, x, y))</code>
-            <code>    }),</code>
-            <code>  );</code>
+            <code class="js">const movePreviewElement$ = dragMove$</code>
+            <code class="js">  .pipe(</code>
+            <code class="js">    withLatestFrom(previewElement$),</code>
+            <code class="js">    tap(([{ x, y }, previewEl]) => {</code>
+            <code class="js">      movePreviewElement(previewEl, x, y))</code>
+            <code class="js">    }),</code>
+            <code class="js">  );</code>
         </pre>
         <footer>
         </footer>
@@ -518,14 +573,19 @@
     <section class="slide">
         <h2>And move dragged element itself</h2>
         <pre>
-            <code>const moveDragElement$ = dragmove$</code>
-            <code>  .pipe(</code>
-            <code>    withLatestFrom(dragElement$),</code>
-            <code>    tap(([{ x, y }, dragEl]) => moveDragElement(dragEl, x, y)),</code>
-            <code>  );</code>
+            <code class="js">const moveDragElement$ = dragMove$</code>
+            <code class="js">  .pipe(</code>
+            <code class="js">    withLatestFrom(dragElement$),</code>
+            <code class="js">    tap(([{ x, y }, dragEl]) => moveDragElement(dragEl, x, y)),</code>
+            <code class="js">  );</code>
         </pre>
         <footer>Але ми хочемо добитись результату, щоб не на всі рухи мишкою
             наш редактор реагував.
+        </footer>
+    </section>
+    <section class="slide">
+        <video src="./video/bug.ogv" class="cover h" autoplay muted loop cover="none" style="box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
+        <footer>
         </footer>
     </section>
     <section class="slide">
@@ -538,12 +598,12 @@
     <section class="slide">
         <h2>Optimize element movement</h2>
         <pre>
-            <code>const moveDragElement$ = dragmove$</code>
-            <code>  .pipe(</code>
-            <code>    withLatestFrom(dragElement$),</code>
-            <code>    <mark>sampleTime(200),</mark></code>
-            <code>    tap(([{ x, y }, dragEl]) => moveDragElement(dragEl, x, y)),</code>
-            <code>  );</code>
+            <code class="js">const moveDragElement$ = dragMove$</code>
+            <code class="js">  .pipe(</code>
+            <code class="js">    withLatestFrom(dragElement$),</code>
+            <code class="js">    <mark>sampleTime(200),</mark></code>
+            <code class="js">    tap(([{ x, y }, dragEl]) => moveDragElement(dragEl, x, y)),</code>
+            <code class="js">  );</code>
         </pre>
         <footer>
         </footer>
@@ -551,14 +611,14 @@
     <section class="slide">
         <h2>Then drop the element</h2>
         <pre>
-            <code>const finishMovement$ = dragend$</code>
-            <code>  .pipe(</code>
-            <code>    withLatestFrom(previewElement$, dragElement$),</code>
-            <code>    tap(([_, previewEl, dragEl]) => {</code>
-            <code>      previewEl.remove();</code>
-            <code>      dragEl.classList.remove('active');</code>
-            <code>    }),</code>
-            <code>  );</code>
+            <code class="js">const finishMovement$ = dragEnd$</code>
+            <code class="js">  .pipe(</code>
+            <code class="js">    withLatestFrom(previewElement$, dragElement$),</code>
+            <code class="js">    tap(([_, previewEl, dragEl]) => {</code>
+            <code class="js">      previewEl.remove();</code>
+            <code class="js">      dragEl.classList.remove('active');</code>
+            <code class="js">    }),</code>
+            <code class="js">  );</code>
         </pre>
         <footer>
         </footer>
@@ -566,9 +626,9 @@
     <section class="slide">
         <h2>Don't forget to subscibe</h2>
         <pre>
-            <code>movePreviewElement$.subscribe(() => {});</code>
-            <code>moveDragElement$.subscribe(() => {});</code>
-            <code>finishMovement$.subscribe(() => {});</code>
+            <code class="js">movePreviewElement$.subscribe(() => {});</code>
+            <code class="js">moveDragElement$.subscribe(() => {});</code>
+            <code class="js">finishMovement$.subscribe(() => {});</code>
         </pre>
         <footer>
         </footer>
@@ -582,15 +642,15 @@
         </footer>
     </section>
     <section class="slide">
-        <h2>Save Example</h2>
-        <p>Video</p>
-        <footer>А тепер розглянемо приклад з Vue алікейшена як реалізувати
-            функціональність save кнопки з різними статусами.
+        <h2 class="shout shrink" style="font-size: 90px;">Vue.js + Rx.js</h2>
+        <footer>Для інтергації Vue з Rx є бібліотека
         </footer>
     </section>
     <section class="slide">
-        <h2 class="shout shrink" style="font-size: 90px;">Vue.js + Rx.js</h2>
-        <footer>Для інтергації Vue з Rx є бібліотека
+        <h2>Save Example</h2>
+        <video src="./video/save.mov" autoplay muted loop cover="none" style="box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
+        <footer>А тепер розглянемо приклад з Vue алікейшена як реалізувати
+            функціональність save кнопки з різними статусами.
         </footer>
     </section>
     <section class="slide">
@@ -604,16 +664,16 @@
     <section class="slide">
         <h2>Subscriptions</h2>
         <pre>
-            <code>export default {</code>
-            <code>  name: 'save-changes',</code>
-            <code>  subscriptions: {</code>
-            <code>      statusMessage: new Observable(...)</code>
-            <code>  }</code>
-            <code>};</code>
+            <code class="js">export default {</code>
+            <code class="js">  name: 'save-changes',</code>
+            <code class="js">  subscriptions: {</code>
+            <code class="js">      statusMessage: new Observable(...)</code>
+            <code class="js">  }</code>
+            <code class="js">};</code>
         </pre>
         <pre class="next">
-            <code>//bind to it normally in templates</code>
-            <code>&lt;p&gt;{{ msg }}&lt;/p&gt;</code>
+            <code class="js">//bind to it normally in templates</code>
+            <code class="js">&lt;p&gt;{{ msg }}&lt;/p&gt;</code>
         </pre>
         <footer>
         </footer>
@@ -621,17 +681,17 @@
     <section class="slide small-code">
         <h2>v-stream</h2>
         <pre>
-            <code>&lt;v-btn v-stream:click="save$"&gt;Save&lt;/v-btn&gt;</code>
+            <code class="js">&lt;v-btn v-stream:click="save$"&gt;Save&lt;/v-btn&gt;</code>
         </pre>
         <pre class="next">
-            <code>export default {</code>
-            <code>  domStreams: ['save$'],</code>
-            <code>  subscriptions () {</code>
-            <code>    return {</code>
-            <code>      statusMessage: this.save$.pipe(map(() => 'Saving'))</code>
-            <code>    }</code>
-            <code>  }</code>
-            <code>};</code>
+            <code class="js">export default {</code>
+            <code class="js">  domStreams: ['save$'],</code>
+            <code class="js">  subscriptions () {</code>
+            <code class="js">    return {</code>
+            <code class="js">      statusMessage: this.save$.pipe(map(() => 'Saving'))</code>
+            <code class="js">    }</code>
+            <code class="js">  }</code>
+            <code class="js">};</code>
         </pre>
         <footer>vue-rx provides the v-stream directive which allows you 
             to stream DOM events to an Rx Subject. The syntax is similar to v-on 
@@ -641,28 +701,28 @@
     </section>
     <section class="slide">
         <h2>Vuex Store</h2>
-        <img src="./pictures/vuex.png" class="place r" alt="">
+        <img src="./pictures/vuex.png" class="place r" style="right:120px;z-index:-1;" alt="">
         <footer>
         </footer>
     </section>
     <section class="slide small-code">
         <!-- <h2>Store</h2> -->
-        <pre>
-            <code>const store = {</code>
-            <code>  state: { status: Status.Initial }</code>
-            <code>  mutations: {</code>
-            <code>    setStatus(state, { status }) { state.status = status; }</code>
-            <code>  },</code>
-            <code>  actions: {</code>
-            <code>    save({ commit }) {</code>
-            <code>      commit('setStatus', { status: Status.Saving });</code>
-            <code>      saver.save();</code>
-            <code>    },</code>
-            <code>    setStatus({ dispatch, commit }, data) {</code>
-            <code>      commit('setStatus', data);</code>
-            <code>    },</code>
-            <code>  },</code>
-            <code>};</code>
+        <pre style="margin-top:-20px;" class="code">
+            <code class="js">const store = {</code>
+            <code class="js">  state: { status: Status.Initial }</code>
+            <code class="js">  mutations: {</code>
+            <code class="js">    setStatus(state, { status }) { state.status = status; }</code>
+            <code class="js">  },</code>
+            <code class="js">  actions: {</code>
+            <code class="js">    save({ commit }) {</code>
+            <code class="js">      commit('setStatus', { status: Status.Saving });</code>
+            <code class="js">      saver.save();</code>
+            <code class="js">    },</code>
+            <code class="js">    setStatus({ dispatch, commit }, data) {</code>
+            <code class="js">      commit('setStatus', data);</code>
+            <code class="js">    },</code>
+            <code class="js">  },</code>
+            <code class="js">};</code>
         </pre>
         <footer>
         </footer>
@@ -681,55 +741,56 @@
     <section class="slide">
         <h2>Dispatch Action</h2>
         <pre>
-            <!-- <code>export default {</code> -->
-            <code>  methods: {</code>
-            <code>    ...mapActions('saveModule', ['save'])</code>
-            <code>  }</code>
-            <!-- <code>};</code> -->
+            <!-- <code class="js">export default {</code> -->
+            <code class="js">  methods: {</code>
+            <code class="js">    ...mapActions('saveModule', ['save'])</code>
+            <code class="js">  }</code>
+            <!-- <code class="js">};</code> -->
         </pre>
         <footer>
         </footer>
     </section>
     <section class="slide">
         <!-- <h2></h2> -->
-        <pre>
-            <code>export default {</code>
-            <code>  subscriptions () {</code>
-            <code>  const status$ = this.$watchAsObservable('status', { immediate: true })</code>
-            <code>    .pluck('newValue')</code>
-            <code>    .share();</code>
-            <code>    return {</code>
-            <code>      statusMessage: status$.map(this.getStatusMessages),</code>
-            <code>    }</code>
-            <code>  },</code>
-            <code>  computed: {</code>
-            <code>    ...mapState('saveModule', ['status']),</code>
-            <code>  }</code>
-            <code>};</code>
+        <pre class="code" style="margin-left:-20px;">
+            <code class="js">export default {</code>
+            <code class="js">  subscriptions () {</code>
+            <code class="js">  const status$ = this.$watchAsObservable('status',{immediate:true})</code>
+            <code class="js">    .pluck('newValue')</code>
+            <code class="js">    .share();</code>
+            <code class="js">    return {</code>
+            <code class="js">      statusMessage: status$.map(this.getStatusMessages),</code>
+            <code class="js">    }</code>
+            <code class="js">  },</code>
+            <code class="js">  computed: {</code>
+            <code class="js">    ...mapState('saveModule', ['status']),</code>
+            <code class="js">  }</code>
+            <code class="js">};</code>
         </pre>
         <footer>
         </footer>
     </section>
     <section class="slide">
-        <h2>In what part of Vue app Rx may be used?</h2>
-        <img src="./pictures/rx-usage.png" alt="">
+        <h2 style="width:106%;">In what part of <br/>Vue app <br/>Rx may be<br/> used?</h2>
+        <img src="./pictures/rx-usage.png" class="place r" style="z-index:-1;" alt="">
         <footer>
         </footer>
     </section>
     <section class="slide">
-        <h2>Best practises, Ideas</h2>
+        <h2 class="shout shrink" style="font-size: 90px;">Best Practises, Ideas</h2>
         <p></p>
         <footer>
         </footer>
     </section>
     <section class="slide">
         <h2>How to start?</h2>
-        <p></p>
+        <img src="./pictures/clif.png" class="place r"alt="">
         <footer>
         </footer>
     </section>
     <section class="slide">
         <h2>OMG Rx.js is so confusing!</h2>
+        <img src="./pictures/wow.gif" class="place r" alt="">
         <p class="next">Stop worrying about the operators</p>
         <p class="next">Seriously!</p>
         <footer>Rx.js заставляє тебе почуватись зляканим, самотнім, безпомічним?
@@ -739,10 +800,10 @@
     <section class="slide">
         <h2>Observables are not scarier than promises</h2>
         <pre>
-            <code>promise.then(resolveFn);</code>
+            <code class="js">promise.then(resolveFn);</code>
         </pre>
         <pre>
-            <code>observable.subscribe(nextFn);</code>
+            <code class="js">observable.subscribe(nextFn);</code>
         </pre>
         <p>Then try to use 'map' to chain observables.</p>
         <footer>Observables не страшніші, ніж проміси, якщо не використовувати оператори.
@@ -752,21 +813,22 @@
     </section>
     <section class="slide">
         <h2>What Operator Do I Use???</h2>
-        <p>Remain calm, it's ok</p>
-        <p>Use operators that you know</p>
+        <img src="./pictures/calm.jpg" width="460" style="z-index:-1;" class="place r" alt="">
+        <p class="next">Remain calm, it's ok</p>
+        <p class="next">Use operators that you know</p>
         <footer>
         </footer>
     </section>
     <section class="slide">
         <h2>Operator Decision Tree</h2>
-        <img src="./pictures/tree.png" alt="">
+        <video src="./video/tree.mov" width="100%" autoplay muted loop cover="none" style="box-shadow: 0 0 10px rgba(0,0,0,0.5);"></video>
         <footer>
         </footer>
     </section>
     <section class="slide">
         <h2>DO NOT Rx All the things</h2>
         <p>You can build your app as one big observable...<br/> but please don't</p>
-        <p></p>
+        <img src="./pictures/no.jpg" class="place r b" width="400" alt="">
         <footer>Rx - дійсно потужна річ. І коли ви добре розібрались з ним і правильно
             використовуєте, він робить ваш код добре читаємим, але ви повинні використовувати
             його, де це дійсно найкрещ підходить
@@ -775,11 +837,11 @@
     <section class="slide">
         <h2>Use Rx where it's best suited</h2>
         <ul>
-            <li>Composing multiple events together</li>
-            <li>Adding delay</li>
-            <li>Clientside backpressure</li>
-            <li>Coordination async tasks</li>
-            <li>When cancellation is required</li>
+            <li class="next">Composing multiple events together</li>
+            <li class="next">Adding delay</li>
+            <li class="next">Clientside backpressure</li>
+            <li class="next">Coordination async tasks</li>
+            <li class="next">When cancellation is required</li>
         </ul>
         <footer>1) для складного юі (як драг-дроп)
             2) додавання різних затримок, таймаутів
@@ -794,7 +856,8 @@
     </section>
     <section class="slide">
         <h2>Thank you</h2>
-        <p></p>
+        <img src="./pictures/js-fest.png" style="position:absolute; right: 6px; bottom: 10px;width:110px;" alt="">
+        <img src="./pictures/qr.png" style="position:absolute; right: 121px; bottom: -5px; width:140px;"  alt="">
         <footer>
         </footer>
     </section>
@@ -868,7 +931,7 @@
 
     <section class="slide">
         <h2>Plain text on your slides</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur <a target="blank" href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code class="js">&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
         <footer class="footer">
             <p>Cosby sweater Shoreditch.</p>
         </footer>
@@ -911,13 +974,13 @@
     <section class="slide">
         <h2>Code samples</h2>
         <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
+            <code class="js">&lt;!DOCTYPE html&gt;</code>
             <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
+            <code class="js"><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
+            <code class="js">    &lt;title&gt;Shower&lt;/title&gt;</code>
+            <code class="js">    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+            <code class="js">    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+            <code class="js"><mark>&lt;/head&gt;</mark></code>
         </pre>
     </section>
 
@@ -963,7 +1026,7 @@
         <figure>
             <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
             <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+                <a target="blank" href="http://fiftyfootshadows.net/">© John Carey</a>
             </figcaption>
         </figure>
         <style>
@@ -991,7 +1054,7 @@
     <section class="slide" id="see-more">
         <h2 class="shout">
             <img src="pictures/logo.svg" alt="Shower logo">
-            <a href="https://github.com/shower/shower">See more on GitHub</a>
+            <a target="blank" href="https://github.com/shower/shower">See more on GitHub</a>
         </h2>
         <style>
             #see-more h2 {
@@ -1006,7 +1069,7 @@
     </section> -->
 
     <footer class="badge">
-        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+        <a target="blank" href="https://github.com/shower/shower">Fork me on GitHub</a>
     </footer>
 
     <div class="progress"></div>

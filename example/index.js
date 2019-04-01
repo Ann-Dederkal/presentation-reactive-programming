@@ -1,5 +1,5 @@
 import { fromEvent } from 'rxjs';
-import { sampleTime, map, flatMap, takeUntil, take, tap, withLatestFrom, share } from 'rxjs/operators';
+import { sampleTime, map, flatMap, takeUntil, take, tap, withLatestFrom, share, debounceTime } from 'rxjs/operators';
 
 init();
 
