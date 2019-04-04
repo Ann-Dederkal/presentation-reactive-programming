@@ -212,7 +212,7 @@
     <section class="slide">
         <h2>Stream Example</h2>
         <pre>
-            <code class="js">button.addEventListener(event => {</code>
+            <code class="js">button.addEventListener('click', event => {</code>
             <code class="js">  console.log(event);</code>
             <code class="js">});</code>
         </pre>
@@ -296,7 +296,7 @@
     <section class="slide">
         <h2>Simple Example</h2>
         <pre>
-            <code class="js">button.addEventListener(event => {</code>
+            <code class="js">button.addEventListener('click', event => {</code>
             <code class="js">  console.log(event);</code>
             <code class="js">});</code>
         </pre>
@@ -451,10 +451,13 @@
     </section>
     <section class="slide">
         <h2>How Rx helps to manage async stuff?</h2>
-        <ul>
-            <li>Observables are cancelable</li>
-            <li>Rx operators are awesome$</li>
-        </ul>
+        <div class="next">
+            <ul>
+                <li >Rx operators are awesome$</li>
+                <li>Observables are cancelable</li>
+            </ul>
+            <img src="./pictures/unicorn.png" class="place r b" style="width:400px;z-index:-1;" alt="">
+        </div>
         <footer>Проресьорчити це Observables are cancelable
             - Можливістю легко управляти асинхронними діями, які потребують якохсь додаткової логіки управління - при допомозі операторів.
             - Можливістю відмінити дію. Що з промісами зробити не можливо. Наприклад, при переході між роутами аппа, чи завжди ми відміняємо запити, які були вже надіслані?  
@@ -750,16 +753,18 @@
         <footer>
         </footer>
     </section>
-    <section class="slide">
+    <section class="slide small-code">
         <!-- <h2></h2> -->
-        <pre class="code" style="margin-left:-20px;">
+        <pre class="code">
             <code class="js">export default {</code>
             <code class="js">  subscriptions () {</code>
-            <code class="js">  const status$ = this.$watchAsObservable('status',{immediate:true})</code>
-            <code class="js">    .pluck('newValue')</code>
-            <code class="js">    .share();</code>
+            <code class="js">    const status$ = this.$watchAsObservable('status',{immediate:true})</code>
+            <code class="js">      .pipe(</code>
+            <code class="js">        pluck('newValue'),</code>
+            <code class="js">        share()</code>
+            <code class="js">      );</code>
             <code class="js">    return {</code>
-            <code class="js">      statusMessage: status$.map(this.getStatusMessages),</code>
+            <code class="js">      statusMessage: status$.pipe(map(this.getStatusMessages)),</code>
             <code class="js">    }</code>
             <code class="js">  },</code>
             <code class="js">  computed: {</code>
