@@ -500,11 +500,11 @@
     <section class="slide">
         <h2>Create Streams from Mouse Events</h2>
         <pre>
-            <code class="js">mouseDown$ = fromEvent(body, 'mousedown')</code>
+            <code class="js">const mouseDown$ = fromEvent(body, 'mousedown')</code>
             <code class="js"> .pipe(map(getCoordsFromEvent));</code>
-            <code class="js">mouseMove$ = fromEvent(body, 'mousemove')</code>
+            <code class="js">const mouseMove$ = fromEvent(body, 'mousemove')</code>
             <code class="js"> .pipe(map(getCoordsFromEvent));</code>
-            <code class="js">mouseUp$ = fromEvent(body, 'mouseup')</code>
+            <code class="js">const mouseUp$ = fromEvent(body, 'mouseup')</code>
             <code class="js"> .pipe(map(getCoordsFromEvent));</code>
         </pre>
         <footer>
@@ -660,7 +660,7 @@
     <section class="slide">
         <h2>vue-rx</h2>
         <p>RxJS integration for Vue.js.</p>
-        <p>Handles subsribtion/unsubscription for you.</p>
+        <p>Handles subscription/unsubscription for you.</p>
         <footer>Це офіційна бібліотека від розробників Vue. 
             я не буду розказувати про підклюення, лише про основну ціль
         </footer>
